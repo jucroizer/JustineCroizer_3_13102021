@@ -20,6 +20,7 @@ $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $color-localization: #EAEAEA;
+$color-background: #f6f6f6;
 // linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
 
 // mixin mobile-only
@@ -90,7 +91,7 @@ $color-localization: #EAEAEA;
     @include mobile-only{
         padding: 2em 2em;
         text-align: center;
-        background-color: #f6f6f6;
+        background-color: $color-background;
         font-size: 1.2em;
     }
     &>h2{
@@ -100,6 +101,7 @@ $color-localization: #EAEAEA;
     }
 }
 
+// Boutons CTA - Explorer & Commande
 .cta{
     border: none;
     border-radius: 50px;
@@ -112,5 +114,62 @@ $color-localization: #EAEAEA;
         font-size: 0.8em;
         padding: 0em 1em;
         font-weight: 500;
+    }
+}
+
+// Fonctionnement
+.fonctionnement{
+    margin: 3em 1em;
+
+    h2{
+        margin-bottom: 1.5em;
+    }
+
+    &>.procedure-boxes{
+        display: flex;
+        width: 85%;
+        background-color: $color-background;
+        margin: 1em 0em 1em 1.5em;
+        border-radius: 15px;
+        padding: 0.5em;
+        box-shadow: 4px 5px 10px #CECECD;
+
+        &>.procedure-numbers{
+            position: absolute;
+            border-radius: 100px;
+            background-color: $color-primary;
+            margin-top: 0.5em;
+            left: 1.5em;
+
+            &>p{
+                height: 0em;
+                width: 1.9em;
+                text-align: center;
+                position: relative;
+                top: -0.5em;
+                color: #fff;
+            }
+        }
+
+        &>.procedure-icons{
+            margin: 1em 1em 0em 1.5em;
+            color: #7D7C7D;
+            .fa-mobile-alt{
+                margin-right: 0.3em;
+            }
+        }
+
+        &>.procedure-text{
+            font-weight: 500;
+        }
+    }
+}
+
+// Restaurants
+.restaurant{
+    background-color: $color-background;
+
+    h2{
+        margin-bottom: 1.5em;
     }
 }
