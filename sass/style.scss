@@ -36,6 +36,11 @@ $color-background: #f6f6f6;
     }
 };
 
+//mixin box-shadow
+@mixin card-shadow {
+    box-shadow: 4px 5px 10px #CECECD;
+}
+
 // Header Page d'acceuil
 .home-header{
     @include mobile-only{
@@ -109,7 +114,8 @@ $color-background: #f6f6f6;
     background: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
     font-size: 1em;
     color: #fff;
-    box-shadow: 4px 5px 10px #CECECD;
+    @include card-shadow();
+
     &>p{
         font-size: 0.8em;
         padding: 0em 1em;
@@ -119,7 +125,7 @@ $color-background: #f6f6f6;
 
 // Fonctionnement
 .fonctionnement{
-    margin: 3em 1em;
+    padding: 2em 1em 3em 1em;
 
     h2{
         margin-bottom: 1.5em;
@@ -132,7 +138,7 @@ $color-background: #f6f6f6;
         margin: 1em 0em 1em 1.5em;
         border-radius: 15px;
         padding: 0.5em;
-        box-shadow: 4px 5px 10px #CECECD;
+        @include card-shadow();
 
         &>.procedure-numbers{
             position: absolute;
@@ -167,9 +173,52 @@ $color-background: #f6f6f6;
 
 // Restaurants
 .restaurant{
+    padding: 2em 1em;
     background-color: $color-background;
 
     h2{
         margin-bottom: 1.5em;
+    }
+
+    &>.restaurant-choice{
+        margin: 0em 1em 2em 0em;
+        display: inline-block;
+        width: 100%;
+        border-radius: 20px;
+        @include card-shadow();
+
+        &>.img-home-restaurant{
+            object-fit: cover;
+            object-position: 50% 60%;
+            width: 100%;
+            height: 11em;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+    }
+
+    .new-restaurant-box{
+        position: absolute;
+        background-color: $color-tertiary;
+        padding: 0.1em 0.5em;
+        font-size: 1em;
+        border-radius: 3px;
+        width: 24%;
+
+        p{
+            margin: 0.5em;
+            font-size: 1em;
+            color: #038C65;
+        }
+    }
+
+    .heart{
+        position: relative;
+        right: -18em;
+        bottom: 3em;
+        
+        .fa-heart{
+            font-size: 1.5em;
+        }
     }
 }
