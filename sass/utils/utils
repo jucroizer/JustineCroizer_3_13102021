@@ -1,0 +1,6 @@
+on y range les variables, les mixins, les fonctions et les placeholders pour les extensions (si utilisez).
+On recommande de disposer les fichiers tel que :
+- Les variables
+- Les fonctions
+- Les mixins
+- Les placeholders
