@@ -120,7 +120,7 @@ $color-hover: #F4EDFF;
 
 // Fonctionnement
 .fonctionnement{
-    padding: 2em 1em 3em 3em;
+    padding: 2em 1em 3em 4em;
     display: flex;
     width: 80%;
 
@@ -140,7 +140,7 @@ $color-hover: #F4EDFF;
         padding: 0.5em;
         display: flex;
         width: 85%;
-        margin: 5em 0em 1.5em 1.5em;
+        margin: 5em 2em 1.5em 1.5em;
         @include card-shadow();
 
         @include mobile-only{
@@ -152,7 +152,11 @@ $color-hover: #F4EDFF;
             border-radius: 100px;
             background-color: $color-primary;
             margin-top: 0.5em;
-            left: 1.5em;
+            margin-left: -1.5em;
+
+            @include mobile-only{
+                margin-left: -1.5em;
+            }
 
             &>p{
                 height: 0em;
@@ -177,73 +181,37 @@ $color-hover: #F4EDFF;
         }
     }
 
-    @include mobile-only{
-        padding: 2em 1em 3em 1em;
-
-        h2{
-            margin-bottom: 1.5em;
-        }
-
-        &>.procedure-boxes{
-            display: flex;
-            width: 85%;
-            background-color: $color-background;
-            margin: 1em 0em 1.5em 1.5em;
-            border-radius: 15px;
-            padding: 0.5em;
-            @include card-shadow();
-
-            &>.procedure-numbers{
-                position: absolute;
-                border-radius: 100px;
-                background-color: $color-primary;
-                margin-top: 0.5em;
-                left: 1.5em;
-
-                &>p{
-                    height: 0em;
-                    width: 1.9em;
-                    text-align: center;
-                    position: relative;
-                    top: -0.5em;
-                    color: #fff;
-                }
-            }
-
-            &>.procedure-icons{
-                margin: 1em 1em 0em 1.5em;
-                color: #7D7C7D;
-                .fa-mobile-alt{
-                    margin-right: 0.3em;
-                }
-            }
-
-            &>.procedure-text{
-                font-weight: 500;
-            }
-        }
-    }
     
 }
 
 // Restaurants
 .restaurant{
-
-    padding: 2em 1em;
+    display: inline-block;
+    width: 100%;
+    padding: 2em 4em;
     background-color: $color-background;
-
+    
+    @include mobile-only{
+        padding: 2em 1em;
+    }
+    
     h2{
         margin-bottom: 1.5em;
     }
 
     &>.restaurant-choice{
-        margin: 0em 0em 2em 0em;
+        margin: 0em -1em 3em 9em;
         display: inline-block;
-        width: 100%;
+        width: 30%;
         height: 16em;
         border-radius: 20px;
         @include card-shadow();
-
+        
+        @include mobile-only{
+            margin: 0em 0em 2em 0.3em;
+            width: 90%;
+        }
+        
         &>.img-home-restaurant{
             object-fit: cover;
             object-position: 50% 60%;
@@ -253,12 +221,12 @@ $color-hover: #F4EDFF;
         }
 
         .restaurant-heading{
-            margin: 1em 0.5em 0em 0.5em;
+            margin: 1em 0.5em 0em 1em;
             font-weight: 700;
         }
 
         .restaurant-subheading{
-            margin: 0.3em 0.5em 0.5em 0.5em;
+            margin: 0.3em 0.5em 0.5em 1em;
             font-weight: 300;
         }
     }
@@ -270,9 +238,12 @@ $color-hover: #F4EDFF;
         font-size: 1em;
         border-radius: 3px;
         width: 24%;
-        left: 14.5em;
-        bottom: 14.5em;
+        margin: -14em 0em 0em 18em;
         text-align: center;
+
+        @include mobile-only{
+            margin: -14em 0em 0em 15.5em;
+        }
 
         p{
             margin: 0.5em;
@@ -283,13 +254,18 @@ $color-hover: #F4EDFF;
 
     .heart{
         position: relative;
-        right: -18em;
-        bottom: 2.5em;
+        margin: -2.5em 0em 0em 23em;
+
+        @include mobile-only{
+            margin: -2.5em 0em 0em 20em;
+        }
 
         &.heart-box{
-            bottom: 3.8em;
-            right: -19em;
-            margin: -1em;
+            margin: 9em 0em 0em 23em;
+
+            @include mobile-only{
+                margin: 9em 0em 0em 20em;
+            }
         }
 
         .fa-heart{
@@ -297,84 +273,17 @@ $color-hover: #F4EDFF;
         }
     }
 
-
-    @include mobile-only{
-        padding: 2em 1em;
-        background-color: $color-background;
-
-        h2{
-            margin-bottom: 1.5em;
-        }
-
-        &>.restaurant-choice{
-            margin: 0em 0em 2em 0em;
-            display: inline-block;
-            width: 100%;
-            height: 16em;
-            border-radius: 20px;
-            @include card-shadow();
-
-            &>.img-home-restaurant{
-                object-fit: cover;
-                object-position: 50% 60%;
-                width: 100%;
-                height: 11em;
-                border-radius: 20px 20px 0px 0px;
-            }
-
-            .restaurant-heading{
-                margin: 1em 0.5em 0em 0.5em;
-                font-weight: 700;
-            }
-
-            .restaurant-subheading{
-                margin: 0.3em 0.5em 0.5em 0.5em;
-                font-weight: 300;
-            }
-
-        }
-
-        .new-restaurant-box{
-            position: relative;
-            background-color: $color-tertiary;
-            padding: 0.1em 0.5em;
-            font-size: 1em;
-            border-radius: 3px;
-            width: 24%;
-            left: 14.5em;
-            bottom: 14.5em;
-            text-align: center;
-
-            p{
-                margin: 0.5em;
-                font-size: 1em;
-                color: #038C65;
-            }
-        }
-
-        .heart{
-            position: relative;
-            right: -18em;
-            bottom: 2.5em;
-
-            &.heart-box{
-                bottom: 3.8em;
-                right: -19em;
-                margin: -1em;
-            }
-
-            .fa-heart{
-                font-size: 1.5em;
-            }
-        }
-    }
 }
 
 // Footer
 .footer{
-    padding: 1em;
+    padding: 2em 4em;
     background-color: $color-footer;
     color: #fff;
+
+    @include mobile-only{
+        padding: 1em;
+    }
 
     h3{
         margin: 1em 0.5em 1.5em 0.5em;
