@@ -13,9 +13,9 @@ html, body {
 
 // Breakpoints
 $breakpoints: (
-    mobile: 721px,
-    max-tab: 1024px,
-    min-tab: 722px
+    mobile: 980px,
+    max-tab: 1370px,
+    min-tab: 981px
 );
 
 // Variables de couleurs
@@ -132,6 +132,12 @@ $color-hover: #F4EDFF;
         width: 88%;
     }
 
+    @include tablet-only{
+        display: inline-block;
+        width: 100%;
+        margin: 0em;
+    }
+
     h2{
         margin-bottom: 1.5em;
     }
@@ -147,6 +153,12 @@ $color-hover: #F4EDFF;
 
         @include mobile-only{
             margin: 1em 0em 1.5em 1.5em;
+        }
+
+        @include tablet-only{
+            display: inline-flex;
+            width: 25%;
+            margin: 1em 2em 1.5em 0.5em;
         }
 
         &>.procedure-numbers{
@@ -214,7 +226,8 @@ $color-hover: #F4EDFF;
             width: 90%;
         }
         @include tablet-only{
-            margin-left: 7em;
+            width: 35%;
+            margin-left: 4em;
         }
         
         &>.img-home-restaurant{
@@ -250,7 +263,7 @@ $color-hover: #F4EDFF;
             margin: -14em 0em 0em 15.5em;
         }
         @include tablet-only{
-            margin-left: 12.5em;
+            margin-left: 14.5em;
         }
 
         p{
@@ -268,7 +281,7 @@ $color-hover: #F4EDFF;
             margin: -2.5em 0em 0em 20em;
         }
         @include tablet-only{
-            margin-left: 16em;
+            margin-left: 19em;
         }
 
         &.heart-box{
@@ -278,7 +291,7 @@ $color-hover: #F4EDFF;
                 margin: 9em 0em 0em 20em;
             }
             @include tablet-only{
-                margin-left: 16em;
+                margin-left: 19em;
             }
         }
 
