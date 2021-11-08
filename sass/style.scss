@@ -14,7 +14,8 @@ html, body {
 // Breakpoints
 $breakpoints: (
     mobile: 721px,
-    tablette: 1024px
+    max-tab: 1024px,
+    min-tab: 722px
 );
 
 // Variables de couleurs
@@ -39,7 +40,7 @@ $color-hover: #F4EDFF;
 };
 
 @mixin tablet-only {
-    @media  screen and (max-width: map-get($breakpoints, tablette)) {
+    @media  screen and (min-width: map-get($breakpoints, min-tab)) and (max-width: map-get($breakpoints, max-tab)) {
         @content
     }
 };
@@ -115,6 +116,7 @@ $color-hover: #F4EDFF;
     background: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
     font-size: 1em;
     color: #fff;
+    cursor: pointer;
     @include card-shadow();
 }
 
@@ -185,7 +187,7 @@ $color-hover: #F4EDFF;
 }
 
 // Restaurants
-.restaurant{
+#restaurant{
     display: inline-block;
     width: 100%;
     padding: 2em 4em;
@@ -210,6 +212,9 @@ $color-hover: #F4EDFF;
         @include mobile-only{
             margin: 0em 0em 2em 0.3em;
             width: 90%;
+        }
+        @include tablet-only{
+            margin-left: 7em;
         }
         
         &>.img-home-restaurant{
@@ -244,6 +249,9 @@ $color-hover: #F4EDFF;
         @include mobile-only{
             margin: -14em 0em 0em 15.5em;
         }
+        @include tablet-only{
+            margin-left: 12.5em;
+        }
 
         p{
             margin: 0.5em;
@@ -259,12 +267,18 @@ $color-hover: #F4EDFF;
         @include mobile-only{
             margin: -2.5em 0em 0em 20em;
         }
+        @include tablet-only{
+            margin-left: 16em;
+        }
 
         &.heart-box{
             margin: 9em 0em 0em 23em;
 
             @include mobile-only{
                 margin: 9em 0em 0em 20em;
+            }
+            @include tablet-only{
+                margin-left: 16em;
             }
         }
 
