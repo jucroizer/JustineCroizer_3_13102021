@@ -22,6 +22,7 @@ $color-localization: #EAEAEA;
 $color-background: #f6f6f6;
 $color-footer: #353535;
 $color-hover: #F4EDFF;
+$color-background-menu: #FFFFFF;
 // linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
 
 @font-face {
@@ -283,7 +284,7 @@ $color-hover: #F4EDFF;
         margin: -2.5em 0em 0em 23em;
 
         @include mobile-only{
-            margin: -2.5em 0em 0em 20em;
+            margin-left: 20em;
         }
         @include tablet-only{
             margin-left: 19em;
@@ -368,4 +369,86 @@ $color-hover: #F4EDFF;
         }
     }
     
+}
+
+// Page restaurant
+
+// Header
+.restaurant-header{
+    display: flex;
+    i{
+        width: 20%;
+        font-size: 1.5em;
+        padding: 1em 0em 1em 1em;
+        text-decoration: none;
+        color: #000;
+    }
+
+    .restaurant-heading-logo{
+        width: 80%;
+        padding: 1.5em 1em 1em 4.5em;
+
+        &>.restaurant-logo{
+            width: 60%;
+        }
+    }
+}
+
+// Photo background
+.heading-restaurant-img{
+    width: 100%;
+}
+
+// Section Menu
+.restaurant-menu{
+    background-color: $color-background;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    padding: 1em 2em;
+    margin-top: -4em;
+    width: 84.5%;
+
+    .heading-restaurant-menu{
+        display: flex;
+        justify-content: space-between;
+
+        h2{
+            font-family: 'Shrikhand';
+            font-size: 2em;
+        }
+
+        .heart{
+            position: relative;
+            margin-top: 2em;
+            .fa-heart{
+                font-size: 2em;
+            }
+        }
+    }
+
+}
+
+// Carte
+
+.menu{
+    
+    h3{
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: 1.1em;
+        padding-bottom: 0.3em;
+        border-bottom: solid $color-tertiary 0.2em;
+        width: 15%;
+    }
+
+    .submenu{
+        background-color: $color-background-menu;
+        border-radius: 20px;
+        @include card-shadow();
+
+        .submenu-detail{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 }
