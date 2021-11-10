@@ -343,9 +343,9 @@ html, body {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0px 0px;
   position: relative;
-  padding: 1em 2em;
+  padding: 1em 1em;
   margin-top: -4em;
-  width: 84.5%;
+  width: 92.2%;
 }
 .restaurant-menu .heading-restaurant-menu {
   display: flex;
@@ -358,12 +358,15 @@ html, body {
 .restaurant-menu .heading-restaurant-menu .heart {
   position: relative;
   margin-top: 2em;
+  margin-right: 1em;
 }
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart {
   font-size: 2em;
 }
-
-.menu h3 {
+.restaurant-menu .menu {
+  margin-bottom: 3em;
+}
+.restaurant-menu .menu h3 {
   text-transform: uppercase;
   font-weight: 200;
   font-size: 1.1em;
@@ -371,14 +374,31 @@ html, body {
   border-bottom: solid #99E2D0 0.2em;
   width: 15%;
 }
-.menu .submenu {
+.restaurant-menu .menu .submenu {
   background-color: #FFFFFF;
-  border-radius: 20px;
+  border-radius: 15px;
+  padding: 0em 1em;
+  margin: 1.5em 0em;
+  width: 91.5%;
   box-shadow: 4px 5px 10px #CECECD;
 }
-.menu .submenu .submenu-detail {
+.restaurant-menu .menu .submenu h4 {
+  padding-top: 1em;
+  margin: 1em 0em 0em 0em;
+  font-weight: 500;
+}
+.restaurant-menu .menu .submenu .submenu-detail {
   display: flex;
   justify-content: space-between;
+}
+.restaurant-menu .menu .submenu .submenu-detail p {
+  font-size: 0.85em;
+  font-weight: 200;
+  margin-top: 0.5em;
+}
+.restaurant-menu .menu .submenu .submenu-detail .submenu-prix {
+  font-weight: 500;
+  margin-right: 0.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

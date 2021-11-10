@@ -404,9 +404,9 @@ $color-background-menu: #FFFFFF;
     background-color: $color-background;
     border-radius: 40px 40px 0px 0px;
     position: relative;
-    padding: 1em 2em;
+    padding: 1em 1em;
     margin-top: -4em;
-    width: 84.5%;
+    width: 92.2%;
 
     .heading-restaurant-menu{
         display: flex;
@@ -420,35 +420,56 @@ $color-background-menu: #FFFFFF;
         .heart{
             position: relative;
             margin-top: 2em;
+            margin-right: 1em;
             .fa-heart{
                 font-size: 2em;
             }
         }
     }
 
-}
+    .menu{
 
-// Carte
-
-.menu{
-    
-    h3{
-        text-transform: uppercase;
-        font-weight: 200;
-        font-size: 1.1em;
-        padding-bottom: 0.3em;
-        border-bottom: solid $color-tertiary 0.2em;
-        width: 15%;
-    }
-
-    .submenu{
-        background-color: $color-background-menu;
-        border-radius: 20px;
-        @include card-shadow();
-
-        .submenu-detail{
-            display: flex;
-            justify-content: space-between;
+        margin-bottom: 3em;
+        
+        h3{
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 1.1em;
+            padding-bottom: 0.3em;
+            border-bottom: solid $color-tertiary 0.2em;
+            width: 15%;
         }
+
+        .submenu{
+            background-color: $color-background-menu;
+            border-radius: 15px;
+            padding: 0em 1em;
+            margin: 1.5em 0em;
+            width: 91.5%;
+            @include card-shadow();
+            
+            h4{
+                padding-top: 1em;
+                margin: 1em 0em 0em 0em;
+                font-weight: 500;
+            }
+
+            .submenu-detail{
+                display: flex;
+                justify-content: space-between;
+
+                p{
+                    font-size: 0.85em;
+                    font-weight: 200;
+                    margin-top: 0.5em;
+                }
+
+                .submenu-prix{
+                    font-weight: 500;
+                    margin-right: 0.5em;
+                }
+            }
+        }
+        
     }
 }
