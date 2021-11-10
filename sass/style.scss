@@ -12,11 +12,7 @@ html, body {
 }
 
 // Breakpoints
-$breakpoints: (
-    mobile: 980px,
-    max-tab: 1370px,
-    min-tab: 981px
-);
+$breakpoints: ( mobile: 980px, max-tab: 1370px, min-tab: 981px );
 
 // Variables de couleurs
 $color-primary: #9356DC;
@@ -247,6 +243,15 @@ $color-hover: #F4EDFF;
             margin: 0.3em 0.5em 0.5em 1em;
             font-weight: 300;
         }
+    }
+
+    .img-home-restaurant{
+        cursor: pointer;
+    }
+
+    .menu-link{
+        text-decoration: none;
+        color: #000;
     }
 
     .new-restaurant-box{

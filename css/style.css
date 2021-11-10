@@ -200,6 +200,13 @@ html, body {
   margin: 0.3em 0.5em 0.5em 1em;
   font-weight: 300;
 }
+#restaurant .img-home-restaurant {
+  cursor: pointer;
+}
+#restaurant .menu-link {
+  text-decoration: none;
+  color: #000;
+}
 #restaurant .new-restaurant-box {
   position: relative;
   background-color: #99E2D0;
