@@ -42,6 +42,13 @@ $color-background-menu: #FFFFFF;
     }
 };
 
+@mixin laptop-only {
+    @media  screen and (min-width: map-get($breakpoints, laptop)) {
+        @content
+    }
+};
+
+
 //mixin box-shadow
 @mixin card-shadow {
     box-shadow: 4px 5px 10px #CECECD;
@@ -121,11 +128,19 @@ $color-background-menu: #FFFFFF;
         @include tablet-only{
             margin: 0em 17em 3em 17em;
         }
+
+        @include laptop-only{
+            margin: 0em 35em 5em 35em;
+        }
     }
     
     .cta-restaurant-p{
             margin: 0;
             padding: 0em 2em;
+
+            @include laptop-only{
+                font-weight: bold;
+            }
         }
     
 }
@@ -420,6 +435,11 @@ $color-background-menu: #FFFFFF;
             padding-left: 14.5em;
         }
 
+        @include laptop-only{
+            width: 25%;
+            padding-left: 35em;
+        }
+
         &>.restaurant-logo{
             width: 60%;
         }
@@ -429,6 +449,12 @@ $color-background-menu: #FFFFFF;
 // Photo background
 .heading-restaurant-img{
     width: 100%;
+
+    @include laptop-only{
+        object-fit: cover;
+        object-position: 50% 62%;
+        height: 24em;
+    }
 }
 
 // Section Menu
@@ -444,6 +470,10 @@ $color-background-menu: #FFFFFF;
         width: 96%;
     }
 
+    @include laptop-only{
+        width: 97.8%;
+    }
+
     .heading-restaurant-menu{
         display: flex;
         justify-content: space-between;
@@ -456,6 +486,11 @@ $color-background-menu: #FFFFFF;
 
             @include tablet-only{
                 margin-left: 1.5em;
+            }
+
+            @include laptop-only{
+                font-size: 2.5em;
+                margin-left: 3em;
             }
         }
 
@@ -470,13 +505,28 @@ $color-background-menu: #FFFFFF;
             @include tablet-only{
                 margin-right: 4em;
             }
+
+            @include laptop-only{
+                margin-top: 3em;
+                margin-right: 11em;
+            }
+        }
+    }
+
+    .responsive-menu-laptop{
+        @include laptop-only{
+            display: flex; 
         }
     }
 
     .responsive-menu{
-
         @include tablet-only{
             display: flex;
+        }
+
+        @include laptop-only{
+            display: flex;
+            margin-left: 7em;
         }
         
     }
@@ -487,6 +537,11 @@ $color-background-menu: #FFFFFF;
         @include tablet-only{
             width: 44%;
             margin-left: 2em;
+        }
+
+        @include laptop-only{
+            margin-right: 5em;
+            width: 40%;
         }
         
         h3{
@@ -503,6 +558,10 @@ $color-background-menu: #FFFFFF;
             @include tablet-only{
                 display: inline-flex;
                 margin-left: -1em;
+            }
+
+            @include laptop-only{
+                width: 78%;
             }
         }
 
