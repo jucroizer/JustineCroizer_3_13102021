@@ -26,7 +26,7 @@ html, body {
 .home-header > .home-heading-logo > .home-logo {
   margin-bottom: 1em;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   .home-header > .home-heading-logo > .home-logo {
     width: 45%;
     margin-bottom: 0.5em;
@@ -76,20 +76,32 @@ html, body {
   cursor: pointer;
   box-shadow: 4px 5px 10px #CECECD;
 }
+.cta.cta-restaurant {
+  margin: 0em 5em 2em 5em;
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .cta.cta-restaurant {
+    margin: 0em 17em 3em 17em;
+  }
+}
+.cta .cta-restaurant-p {
+  margin: 0;
+  padding: 0em 2em;
+}
 
 .fonctionnement {
   padding: 2em 1em 3em 4em;
   display: flex;
   width: 80%;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   .fonctionnement {
     padding-left: 1em;
     display: block;
     width: 88%;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   .fonctionnement {
     display: inline-block;
     width: 100%;
@@ -108,16 +120,16 @@ html, body {
   margin: 5em 2em 1.5em 1.5em;
   box-shadow: 4px 5px 10px #CECECD;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   .fonctionnement > .procedure-boxes {
     margin: 1em 0em 1.5em 1.5em;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   .fonctionnement > .procedure-boxes {
     display: inline-flex;
-    width: 25%;
-    margin: 1em 2em 1.5em 0.5em;
+    width: 33%;
+    margin: 1em 2em 1.5em 1.5em;
   }
 }
 .fonctionnement > .procedure-boxes > .procedure-numbers {
@@ -127,7 +139,7 @@ html, body {
   margin-top: 0.5em;
   margin-left: -1.5em;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   .fonctionnement > .procedure-boxes > .procedure-numbers {
     margin-left: -1.5em;
   }
@@ -157,7 +169,7 @@ html, body {
   padding: 2em 4em;
   background-color: #f6f6f6;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   #restaurant {
     padding: 2em 1em;
   }
@@ -173,16 +185,17 @@ html, body {
   border-radius: 20px;
   box-shadow: 4px 5px 10px #CECECD;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   #restaurant > .restaurant-choice {
     margin: 0em 0em 2em 0.3em;
     width: 90%;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   #restaurant > .restaurant-choice {
-    width: 35%;
-    margin-left: 4em;
+    width: 39%;
+    margin-left: 0em;
+    margin-right: 3em;
   }
 }
 #restaurant > .restaurant-choice > .img-home-restaurant {
@@ -217,14 +230,14 @@ html, body {
   margin: -14em 0em 0em 18em;
   text-align: center;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   #restaurant .new-restaurant-box {
-    margin: -14em 0em 0em 15.5em;
+    margin: -14em 0em 0em 14.5em;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   #restaurant .new-restaurant-box {
-    margin-left: 14.5em;
+    margin-left: 12.5em;
   }
 }
 #restaurant .new-restaurant-box p {
@@ -232,31 +245,36 @@ html, body {
   font-size: 1em;
   color: #038C65;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  #restaurant .new-restaurant-box p {
+    margin: 0.5em 0em;
+  }
+}
 #restaurant .heart {
   position: relative;
   margin: -2.5em 0em 0em 23em;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   #restaurant .heart {
     margin-left: 20em;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   #restaurant .heart {
-    margin-left: 19em;
+    margin-left: 16em;
   }
 }
 #restaurant .heart.heart-box {
   margin: 9em 0em 0em 23em;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 767px) {
   #restaurant .heart.heart-box {
     margin: 9em 0em 0em 20em;
   }
 }
-@media screen and (min-width: 981px) and (max-width: 1370px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   #restaurant .heart.heart-box {
-    margin-left: 19em;
+    margin-left: 16em;
   }
 }
 #restaurant .heart .fa-heart {
@@ -264,57 +282,69 @@ html, body {
 }
 
 .footer {
-  padding: 2em 4em;
+  display: flex;
+  padding: 1em 4em;
   background-color: #353535;
   color: #fff;
 }
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
   .footer {
-    padding: 1em;
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    display: block;
   }
 }
 .footer h3 {
-  margin: 1em 0.5em 1.5em 0.5em;
+  margin: 1.5em 11.5em 0.5em 2em;
   font-family: "Shrikhand";
 }
-.footer .footer-menu {
-  margin: 0em -2em;
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .footer h3 {
+    margin-left: 0.5em;
+  }
 }
-.footer .footer-list {
+@media screen and (max-width: 767px) {
+  .footer h3 {
+    margin-left: -2em;
+    margin-bottom: 1.5em;
+  }
+}
+.footer .footer-menu ul {
+  display: flex;
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .footer .footer-menu ul {
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-menu ul {
+    display: block;
+  }
+}
+.footer .footer-menu .footer-list {
   list-style-type: none;
-  margin: 1em 0em;
+  margin: 1em 0.5em 1em 4.5em;
 }
-.footer .footer-list > .fa-utensils {
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .footer .footer-menu .footer-list {
+    margin-left: -1.5em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .footer-menu .footer-list {
+    margin-left: -4.5em;
+  }
+}
+.footer .footer-menu .footer-list > .fa-utensils {
   margin-right: 1em;
 }
-.footer .footer-list > .fa-hands-helping {
+.footer .footer-menu .footer-list > .fa-hands-helping {
   margin-right: 1em;
   font-size: 0.8em;
-}
-@media screen and (max-width: 980px) {
-  .footer {
-    padding: 1em;
-    background-color: #353535;
-    color: #fff;
-  }
-  .footer h3 {
-    margin: 1em 0.5em 1.5em 0.5em;
-    font-family: "Shrikhand";
-  }
-  .footer .footer-menu {
-    margin: 0em -2em;
-  }
-  .footer .footer-list {
-    list-style-type: none;
-    margin: 1em 0em;
-  }
-  .footer .footer-list > .fa-utensils {
-    margin-right: 1em;
-  }
-  .footer .footer-list > .fa-hands-helping {
-    margin-right: 1em;
-    font-size: 0.8em;
-  }
 }
 
 .restaurant-header {
@@ -330,6 +360,12 @@ html, body {
 .restaurant-header .restaurant-heading-logo {
   width: 80%;
   padding: 1.5em 1em 1em 4.5em;
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-header .restaurant-heading-logo {
+    width: 50%;
+    padding-left: 14.5em;
+  }
 }
 .restaurant-header .restaurant-heading-logo > .restaurant-logo {
   width: 60%;
@@ -347,6 +383,11 @@ html, body {
   margin-top: -4em;
   width: 92.2%;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu {
+    width: 96%;
+  }
+}
 .restaurant-menu .heading-restaurant-menu {
   display: flex;
   justify-content: space-between;
@@ -357,6 +398,11 @@ html, body {
   font-weight: 100;
   margin-left: 0.5em;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .heading-restaurant-menu h2 {
+    margin-left: 1.5em;
+  }
+}
 .restaurant-menu .heading-restaurant-menu .heart {
   position: relative;
   margin-top: 2em;
@@ -365,8 +411,24 @@ html, body {
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart {
   font-size: 2em;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .heading-restaurant-menu .heart {
+    margin-right: 4em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .responsive-menu {
+    display: flex;
+  }
+}
 .restaurant-menu .menu {
   margin-bottom: 3em;
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .menu {
+    width: 44%;
+    margin-left: 2em;
+  }
 }
 .restaurant-menu .menu h3 {
   text-transform: uppercase;
@@ -377,6 +439,12 @@ html, body {
   width: 15%;
   margin-left: 1em;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .menu .submenu-responsive {
+    display: inline-flex;
+    margin-left: -1em;
+  }
+}
 .restaurant-menu .menu .submenu {
   background-color: #FFFFFF;
   border-radius: 15px;
@@ -385,11 +453,26 @@ html, body {
   width: 85%;
   box-shadow: 4px 5px 10px #CECECD;
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .menu .submenu.submenu-dessert {
+    width: 25%;
+    height: 5em;
+    margin-top: 0.5em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .restaurant-menu .menu .submenu.submenu-dessert h4 {
+    margin-top: 0em;
+  }
+}
 .restaurant-menu .menu .submenu h4 {
   padding-top: 1em;
   margin: 1em 0em 0em 0em;
   font-weight: 600;
   font-size: 1.1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .restaurant-menu .menu .submenu .submenu-detail {
   display: flex;
@@ -399,8 +482,12 @@ html, body {
   font-size: 0.95em;
   font-weight: 200;
   margin-top: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .restaurant-menu .menu .submenu .submenu-detail .submenu-prix {
+  text-overflow: clip;
   font-weight: 600;
   margin-right: 0.5em;
 }
