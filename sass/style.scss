@@ -12,7 +12,7 @@ html, body {
 }
 
 // Breakpoints
-$breakpoints: ( mobile-s: 320px, mobile-m: 375px, mobile-l: 425px, mobile: 767px, tablet: 768px, laptop: 1024px, laptop-l: 1440px, max-tab: 1400px, min-tab: 768px );
+$breakpoints: ( mobile-s: 320px, mobile-m: 375px, mobile-l: 425px, mobile: 767px, tablet: 768px, laptop: 1440px, laptop-l: 1440px, max-tab: 1439px, min-tab: 768px );
 
 // Variables de couleurs
 $color-primary: #9356DC;
@@ -125,24 +125,17 @@ $color-background-menu: #FFFFFF;
 
     &.cta-restaurant{
         margin: 0em 5em 2em 5em;
+        padding: 1em 2.5em;
+        font-weight: bold;
+
         @include tablet-only{
             margin: 0em 17em 3em 17em;
         }
 
         @include laptop-only{
-            margin: 0em 35em 5em 35em;
+            margin: 0em 36em 5em 36em;
         }
     }
-    
-    .cta-restaurant-p{
-            margin: 0;
-            padding: 0em 2em;
-
-            @include laptop-only{
-                font-weight: bold;
-            }
-        }
-    
 }
 
 // Fonctionnement
@@ -464,14 +457,14 @@ $color-background-menu: #FFFFFF;
     position: relative;
     padding: 1em 1em;
     margin-top: -4em;
-    width: 92.2%;
+    width: 96%;
 
     @include tablet-only{
-        width: 96%;
+        width: 98%;
     }
 
     @include laptop-only{
-        width: 97.8%;
+        width: 98%;
     }
 
     .heading-restaurant-menu{
