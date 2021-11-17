@@ -12,7 +12,17 @@ html, body {
 }
 
 // Breakpoints
-$breakpoints: ( mobile-s: 320px, mobile-m: 375px, mobile-l: 425px, mobile: 721px, tablet: 768px, laptop: 1062px, laptop-l: 1440px, max-tab: 1061px, min-tab: 722px );
+$breakpoints: ( 
+    mobile-s: 320px, 
+    mobile-m: 375px, 
+    mobile-l: 425px, 
+    mobile: 721px, 
+    tablet: 768px, 
+    min-laptop: 1024px, 
+    max-laptop:1439px, 
+    laptop-l: 1440px, 
+    max-tab: 1023px, 
+    min-tab: 722px );
 
 // Variables de couleurs
 $color-primary: #9356DC;
@@ -43,7 +53,13 @@ $color-background-menu: #FFFFFF;
 };
 
 @mixin laptop-only {
-    @media  screen and (min-width: map-get($breakpoints, laptop)) {
+    @media  screen and (min-width: map-get($breakpoints, min-laptop)) and (max-width: map-get($breakpoints, max-laptop)) {
+        @content
+    }
+};
+
+@mixin laptop-l-only {
+    @media  screen and (min-width: map-get($breakpoints, laptop-l)) {
         @content
     }
 };
@@ -233,7 +249,7 @@ $color-background-menu: #FFFFFF;
     }
 
     &>.restaurant-choice{
-        margin: 0em -1em 3em 9em;
+        margin: 0em 1em 3em 2em;
         display: inline-block;
         width: 25em;
         height: 16em;
@@ -242,13 +258,17 @@ $color-background-menu: #FFFFFF;
         
         @include mobile-only{
             margin: 0em 0em 2em 0.3em;
-            width: 22em;
+            width: 21em;
         }
 
         @include tablet-only{
             width: 20em;
-            margin-left: 0em;
+            margin-left: -1em;
             margin-right: 3em;
+        }
+
+        @include laptop-l-only{
+            margin: 0em 0em 3em 10em;
         }
         
         &>.img-home-restaurant{
@@ -287,11 +307,12 @@ $color-background-menu: #FFFFFF;
         border-radius: 3px;
         width: 6em;
         height: 2em;
-        margin: -14em 0em 0em 18em;
+        margin: -14em 0em 0em 17em;
         text-align: center;
 
         @include mobile-only{
             margin: -14em 0em 0em 14.5em;
+            width: 5em;
         }
         @include tablet-only{
             margin-left: 12.5em;
@@ -310,10 +331,10 @@ $color-background-menu: #FFFFFF;
 
     .heart{
         position: relative;
-        margin: -2.5em 0em 0em 23em;
+        margin: -2.5em 0em 0em 22em;
 
         @include mobile-only{
-            margin-left: 20em;
+            margin-left: 18em;
         }
 
         @include tablet-only{
@@ -321,10 +342,10 @@ $color-background-menu: #FFFFFF;
         }
 
         &.heart-box{
-            margin: 9em 0em 0em 23em;
+            margin: 9em 0em 0em 22em;
 
             @include mobile-only{
-                margin: 9em 0em 0em 20em;
+                margin: 9em 0em 0em 18em;
             }
             
             @include tablet-only{
@@ -341,7 +362,6 @@ $color-background-menu: #FFFFFF;
 
 // Footer
 .footer{
-
     display: flex;
     padding: 1em 4em;
     background-color: $color-footer;
@@ -373,6 +393,7 @@ $color-background-menu: #FFFFFF;
 
         ul{
             display: flex;
+            padding: 0;
 
             @include tablet-only{
                 display: block;
@@ -381,11 +402,15 @@ $color-background-menu: #FFFFFF;
             @include mobile-only{
                 display: block;
             }
+
+            @include laptop-l-only{
+                padding-left: 17em;
+            }
         }
 
         .footer-list{
             list-style-type: none;
-            margin: 1em 0.5em 1em 4.5em;
+            margin: 1em 2em 1em 0em;
 
             @include tablet-only{
                 margin-left: -1.5em;
