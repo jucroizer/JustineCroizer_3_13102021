@@ -151,6 +151,10 @@ $color-background-menu: #FFFFFF;
         @include laptop-only{
             margin: 0em 36em 5em 36em;
         }
+
+        @include laptop-l-only{
+            margin: 0em 36em 5em 36em;
+        }
     }
 }
 
@@ -158,7 +162,6 @@ $color-background-menu: #FFFFFF;
 .fonctionnement{
     padding: 2em 1em 3em 4em;
     display: flex;
-    width: 80%;
 
     @include mobile-only{
         padding-left: 1em;
@@ -168,7 +171,6 @@ $color-background-menu: #FFFFFF;
 
     @include tablet-only{
         display: inline-block;
-        width: 100%;
         margin: 0em;
     }
 
@@ -176,45 +178,57 @@ $color-background-menu: #FFFFFF;
         margin-bottom: 1.5em;
     }
 
-    &>.procedure-boxes{
-        background-color: $color-background;
-        border-radius: 15px;
-        padding: 0.5em;
-        display: flex;
-        width: 30em;
-        margin: 5em 2em 1.5em 1.5em;
-        @include card-shadow();
-
-        @include mobile-only{
-            margin: 1em 0em 1.5em 2.5em;
-            width: 16em;
+    .fonctionnement-procedure-boxes{
+        
+        @include laptop-only{
+            display: flex;
+            width: 90%;
         }
 
-        @include tablet-only{
-            display: inline-flex;
-            width: 16em;
-            margin: 1em 2em 1.5em 1.5em;
+        @include laptop-l-only{
+            display: flex;
         }
+        
 
-        &>.procedure-numbers{
-            position: absolute;
-            border-radius: 100px;
-            background-color: $color-primary;
-            margin-top: 0.5em;
-            margin-left: -1.5em;
+        &>.procedure-boxes{
+            background-color: $color-background;
+            border-radius: 15px;
+            padding: 0.5em;
+            display: flex;
+            width: 16em;
+            margin: 5em 2em 1.5em 1.5em;
+            @include card-shadow();
 
             @include mobile-only{
-                margin-left: -1.5em;
+                margin: 1em 0em 1.5em 2.5em;
+                width: 16em;
             }
 
-            &>p{
-                height: 0em;
-                width: 1.9em;
-                text-align: center;
-                position: relative;
-                top: -0.5em;
-                color: #fff;
+            @include tablet-only{
+                display: inline-flex;
+                width: 16em;
+                margin: 1em 2em 1.5em 1.5em;
             }
+
+            &>.procedure-numbers{
+                position: absolute;
+                border-radius: 100px;
+                background-color: $color-primary;
+                margin-top: 0.5em;
+                margin-left: -1.5em;
+
+                @include mobile-only{
+                    margin-left: -1.5em;
+                }
+
+                &>p{
+                    height: 0em;
+                    width: 1.9em;
+                    text-align: center;
+                    position: relative;
+                    top: -0.5em;
+                    color: #fff;
+                }
         }
 
         &>.procedure-icons{
@@ -229,6 +243,9 @@ $color-background-menu: #FFFFFF;
             font-weight: 500;
         }
     }
+    }
+
+
 
     
 }
@@ -393,14 +410,17 @@ $color-background-menu: #FFFFFF;
 
         ul{
             display: flex;
-            padding: 0;
-
+            
             @include tablet-only{
                 display: block;
             }
 
             @include mobile-only{
                 display: block;
+            }
+
+            @include laptop-only{
+                padding: 0;
             }
 
             @include laptop-l-only{
@@ -460,6 +480,11 @@ $color-background-menu: #FFFFFF;
             padding-left: 35em;
         }
 
+        @include laptop-l-only{
+            width: 25%;
+            padding-left: 35em;
+        }
+
         &>.restaurant-logo{
             width: 60%;
         }
@@ -471,6 +496,12 @@ $color-background-menu: #FFFFFF;
     width: 100%;
 
     @include laptop-only{
+        object-fit: cover;
+        object-position: 50% 62%;
+        height: 24em;
+    }
+
+    @include laptop-l-only{
         object-fit: cover;
         object-position: 50% 62%;
         height: 24em;
@@ -494,6 +525,10 @@ $color-background-menu: #FFFFFF;
         width: 98%;
     }
 
+    @include laptop-l-only{
+        width: 98%;
+    }
+
     .heading-restaurant-menu{
         display: flex;
         justify-content: space-between;
@@ -509,6 +544,11 @@ $color-background-menu: #FFFFFF;
             }
 
             @include laptop-only{
+                font-size: 2.5em;
+                margin-left: 3em;
+            }
+
+            @include laptop-l-only{
                 font-size: 2.5em;
                 margin-left: 3em;
             }
@@ -530,11 +570,20 @@ $color-background-menu: #FFFFFF;
                 margin-top: 3em;
                 margin-right: 11em;
             }
+
+            @include laptop-l-only{
+                margin-top: 3em;
+                margin-right: 11em;
+            }
         }
     }
 
     .responsive-menu-laptop{
         @include laptop-only{
+            display: flex; 
+        }
+
+        @include laptop-l-only{
             display: flex; 
         }
     }
@@ -545,6 +594,11 @@ $color-background-menu: #FFFFFF;
         }
 
         @include laptop-only{
+            display: flex;
+            margin-left: 7em;
+        }
+
+        @include laptop-l-only{
             display: flex;
             margin-left: 7em;
         }
@@ -560,6 +614,11 @@ $color-background-menu: #FFFFFF;
         }
 
         @include laptop-only{
+            margin-right: 5em;
+            width: 40%;
+        }
+
+        @include laptop-l-only{
             margin-right: 5em;
             width: 40%;
         }
@@ -581,6 +640,10 @@ $color-background-menu: #FFFFFF;
             }
 
             @include laptop-only{
+                width: 78%;
+            }
+
+            @include laptop-l-only{
                 width: 78%;
             }
         }

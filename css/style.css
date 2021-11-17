@@ -91,11 +91,15 @@ html, body {
     margin: 0em 36em 5em 36em;
   }
 }
+@media screen and (min-width: 1440px) {
+  .cta.cta-restaurant {
+    margin: 0em 36em 5em 36em;
+  }
+}
 
 .fonctionnement {
   padding: 2em 1em 3em 4em;
   display: flex;
-  width: 80%;
 }
 @media screen and (max-width: 721px) {
   .fonctionnement {
@@ -107,36 +111,46 @@ html, body {
 @media screen and (min-width: 722px) and (max-width: 1023px) {
   .fonctionnement {
     display: inline-block;
-    width: 100%;
     margin: 0em;
   }
 }
 .fonctionnement h2 {
   margin-bottom: 1.5em;
 }
-.fonctionnement > .procedure-boxes {
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .fonctionnement .fonctionnement-procedure-boxes {
+    display: flex;
+    width: 90%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .fonctionnement .fonctionnement-procedure-boxes {
+    display: flex;
+  }
+}
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes {
   background-color: #f6f6f6;
   border-radius: 15px;
   padding: 0.5em;
   display: flex;
-  width: 30em;
+  width: 16em;
   margin: 5em 2em 1.5em 1.5em;
   box-shadow: 4px 5px 10px #CECECD;
 }
 @media screen and (max-width: 721px) {
-  .fonctionnement > .procedure-boxes {
+  .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes {
     margin: 1em 0em 1.5em 2.5em;
     width: 16em;
   }
 }
 @media screen and (min-width: 722px) and (max-width: 1023px) {
-  .fonctionnement > .procedure-boxes {
+  .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes {
     display: inline-flex;
     width: 16em;
     margin: 1em 2em 1.5em 1.5em;
   }
 }
-.fonctionnement > .procedure-boxes > .procedure-numbers {
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers {
   position: absolute;
   border-radius: 100px;
   background-color: #9356DC;
@@ -144,11 +158,11 @@ html, body {
   margin-left: -1.5em;
 }
 @media screen and (max-width: 721px) {
-  .fonctionnement > .procedure-boxes > .procedure-numbers {
+  .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers {
     margin-left: -1.5em;
   }
 }
-.fonctionnement > .procedure-boxes > .procedure-numbers > p {
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers > p {
   height: 0em;
   width: 1.9em;
   text-align: center;
@@ -156,14 +170,14 @@ html, body {
   top: -0.5em;
   color: #fff;
 }
-.fonctionnement > .procedure-boxes > .procedure-icons {
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-icons {
   margin: 1em 1em 0em 1.5em;
   color: #7D7C7D;
 }
-.fonctionnement > .procedure-boxes > .procedure-icons .fa-mobile-alt {
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-icons .fa-mobile-alt {
   margin-right: 0.3em;
 }
-.fonctionnement > .procedure-boxes > .procedure-text {
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-text {
   font-weight: 500;
 }
 
@@ -325,7 +339,6 @@ html, body {
 }
 .footer .footer-menu ul {
   display: flex;
-  padding: 0;
 }
 @media screen and (min-width: 722px) and (max-width: 1023px) {
   .footer .footer-menu ul {
@@ -335,6 +348,11 @@ html, body {
 @media screen and (max-width: 721px) {
   .footer .footer-menu ul {
     display: block;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .footer .footer-menu ul {
+    padding: 0;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -390,6 +408,12 @@ html, body {
     padding-left: 35em;
   }
 }
+@media screen and (min-width: 1440px) {
+  .restaurant-header .restaurant-heading-logo {
+    width: 25%;
+    padding-left: 35em;
+  }
+}
 .restaurant-header .restaurant-heading-logo > .restaurant-logo {
   width: 60%;
 }
@@ -398,6 +422,13 @@ html, body {
   width: 100%;
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .heading-restaurant-img {
+    object-fit: cover;
+    object-position: 50% 62%;
+    height: 24em;
+  }
+}
+@media screen and (min-width: 1440px) {
   .heading-restaurant-img {
     object-fit: cover;
     object-position: 50% 62%;
@@ -423,6 +454,11 @@ html, body {
     width: 98%;
   }
 }
+@media screen and (min-width: 1440px) {
+  .restaurant-menu {
+    width: 98%;
+  }
+}
 .restaurant-menu .heading-restaurant-menu {
   display: flex;
   justify-content: space-between;
@@ -439,6 +475,12 @@ html, body {
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .restaurant-menu .heading-restaurant-menu h2 {
+    font-size: 2.5em;
+    margin-left: 3em;
+  }
+}
+@media screen and (min-width: 1440px) {
   .restaurant-menu .heading-restaurant-menu h2 {
     font-size: 2.5em;
     margin-left: 3em;
@@ -463,7 +505,18 @@ html, body {
     margin-right: 11em;
   }
 }
+@media screen and (min-width: 1440px) {
+  .restaurant-menu .heading-restaurant-menu .heart {
+    margin-top: 3em;
+    margin-right: 11em;
+  }
+}
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .restaurant-menu .responsive-menu-laptop {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1440px) {
   .restaurant-menu .responsive-menu-laptop {
     display: flex;
   }
@@ -479,6 +532,12 @@ html, body {
     margin-left: 7em;
   }
 }
+@media screen and (min-width: 1440px) {
+  .restaurant-menu .responsive-menu {
+    display: flex;
+    margin-left: 7em;
+  }
+}
 .restaurant-menu .menu {
   margin-bottom: 3em;
 }
@@ -489,6 +548,12 @@ html, body {
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .restaurant-menu .menu {
+    margin-right: 5em;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1440px) {
   .restaurant-menu .menu {
     margin-right: 5em;
     width: 40%;
@@ -510,6 +575,11 @@ html, body {
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .restaurant-menu .menu .submenu-responsive {
+    width: 78%;
+  }
+}
+@media screen and (min-width: 1440px) {
   .restaurant-menu .menu .submenu-responsive {
     width: 78%;
   }
