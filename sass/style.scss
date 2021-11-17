@@ -12,7 +12,7 @@ html, body {
 }
 
 // Breakpoints
-$breakpoints: ( mobile-s: 320px, mobile-m: 375px, mobile-l: 425px, mobile: 767px, tablet: 768px, laptop: 1440px, laptop-l: 1440px, max-tab: 1439px, min-tab: 768px );
+$breakpoints: ( mobile-s: 320px, mobile-m: 375px, mobile-l: 425px, mobile: 721px, tablet: 768px, laptop: 1062px, laptop-l: 1440px, max-tab: 1061px, min-tab: 722px );
 
 // Variables de couleurs
 $color-primary: #9356DC;
@@ -165,17 +165,18 @@ $color-background-menu: #FFFFFF;
         border-radius: 15px;
         padding: 0.5em;
         display: flex;
-        width: 85%;
+        width: 30em;
         margin: 5em 2em 1.5em 1.5em;
         @include card-shadow();
 
         @include mobile-only{
-            margin: 1em 0em 1.5em 1.5em;
+            margin: 1em 0em 1.5em 2.5em;
+            width: 16em;
         }
 
         @include tablet-only{
             display: inline-flex;
-            width: 33%;
+            width: 16em;
             margin: 1em 2em 1.5em 1.5em;
         }
 
@@ -234,18 +235,18 @@ $color-background-menu: #FFFFFF;
     &>.restaurant-choice{
         margin: 0em -1em 3em 9em;
         display: inline-block;
-        width: 30%;
+        width: 25em;
         height: 16em;
         border-radius: 20px;
         @include card-shadow();
         
         @include mobile-only{
             margin: 0em 0em 2em 0.3em;
-            width: 90%;
+            width: 22em;
         }
 
         @include tablet-only{
-            width: 39%;
+            width: 20em;
             margin-left: 0em;
             margin-right: 3em;
         }
@@ -284,7 +285,8 @@ $color-background-menu: #FFFFFF;
         padding: 0.1em 0.5em;
         font-size: 1em;
         border-radius: 3px;
-        width: 24%;
+        width: 6em;
+        height: 2em;
         margin: -14em 0em 0em 18em;
         text-align: center;
 
