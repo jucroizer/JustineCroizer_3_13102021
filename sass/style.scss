@@ -13,11 +13,11 @@ html, body {
 
 // Breakpoints
 $breakpoints: ( 
-    mobile-s: 320px, 
-    mobile-m: 375px, 
-    mobile-l: 425px, 
+    // mobile-s: 320px, 
+    // mobile-m: 375px, 
+    // mobile-l: 425px, 
     mobile: 721px, 
-    tablet: 768px, 
+    // tablet: 768px, 
     min-laptop: 1024px, 
     max-laptop:1439px, 
     laptop-l: 1440px, 
@@ -182,7 +182,6 @@ $color-background-menu: #FFFFFF;
         
         @include laptop-only{
             display: flex;
-            width: 90%;
         }
 
         @include laptop-l-only{
