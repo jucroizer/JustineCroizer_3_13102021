@@ -12,9 +12,7 @@ html, body {
 }
 
 // Breakpoints
-$breakpoints: ( 
-    mobile: 425px, 
-    );
+$breakpoints: ( mobile: 767px, min-tablette: 768px, max-tablette: 1024px, laptop: 1025px);
 
 // Variables de couleurs
 $color-primary: #9356DC;
@@ -31,8 +29,19 @@ $color-background-menu: #FFFFFF;
     font-family: 'Shrikhand';
     src: url('font/Shrikhand/Shrikhand-Regular.ttf') format(truetype);
 }
-// mixin mobile-only
+// mixin tablette-only
+@mixin tablette-only {
+    @media screen and (min-width:map-get($breakpoints, min-tablette)) and (max-width:map-get($breakpoints, max-tablette)){
+        @content;
+    }
+}
 
+// mixin tablette-only
+@mixin laptop-only {
+    @media screen and (min-width:map-get($breakpoints, laptop)){
+        @content;
+    }
+}
 
 //mixin box-shadow
 @mixin card-shadow {
@@ -52,6 +61,14 @@ $color-background-menu: #FFFFFF;
             margin-bottom: 1em;
             width: 45%;
             margin-bottom: 0.5em;
+
+            @include tablette-only(){
+                width: 25%;
+            }
+
+            @include laptop-only(){
+                width: 25%;
+            }
         }
     }
 
@@ -120,9 +137,27 @@ $color-background-menu: #FFFFFF;
 
     h2{
         margin-bottom: 1.5em;
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
     }
 
     .fonctionnement-procedure-boxes{
+
+        @include tablette-only(){
+            display: inline-flex;
+            margin: auto 10% auto 10%;
+            flex-wrap: wrap;
+        }
+
+        @include laptop-only(){
+            display: flex;
+        }
 
         &>.procedure-boxes{
             background-color: $color-background;
@@ -130,7 +165,7 @@ $color-background-menu: #FFFFFF;
             padding: 0.5em;
             display: flex;
             margin: 2em auto;
-            width: 65%;
+            width: 16em;
             @include card-shadow();
 
             &>.procedure-numbers{
@@ -173,34 +208,81 @@ $color-background-menu: #FFFFFF;
     
     h2{
         margin-bottom: 1.5em;
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
     }
 
-    &>.restaurant-choice{
+    &>.restaurant-box{
+        @include tablette-only(){
+            text-align: center;
+        }
+
+        @include laptop-only(){
+            text-align: center;
+        }
+
+        &>.restaurant-choice{
         margin: 1em auto 2em auto;
         display: block;
         width: 21em;
         height: 16em;
         border-radius: 20px;
         @include card-shadow();
+
+        @include tablette-only(){
+            display: inline-block;
+            margin: 2%;
+        }
+
+        @include laptop-only(){
+            display: inline-block;
+            margin: 1% 5%;
+        }
         
-        &>.img-home-restaurant{
-            object-fit: cover;
-            object-position: 50% 60%;
-            width: 100%;
-            height: 11em;
-            border-radius: 20px 20px 0px 0px;
-        }
+            &>.img-home-restaurant{
+                object-fit: cover;
+                object-position: 50% 60%;
+                width: 100%;
+                height: 11em;
+                border-radius: 20px 20px 0px 0px;
+            }
 
-        .restaurant-heading{
-            margin: 1em 0.5em 0em 1em;
-            font-weight: 700;
-        }
+            .restaurant-heading{
+                margin: 1em 0.5em 0em 1em;
+                font-weight: 700;
 
-        .restaurant-subheading{
-            margin: 0.3em 0.5em 0.5em 1em;
-            font-weight: 300;
+                @include tablette-only(){
+                    text-align: left;
+                }
+
+                @include laptop-only(){
+                    text-align: left;
+                }
+                
+            }
+
+            .restaurant-subheading{
+                margin: 0.3em 0.5em 0.5em 1em;
+                font-weight: 300;
+                
+                @include tablette-only(){
+                    text-align: left;
+                }
+
+                @include laptop-only(){
+                    text-align: left;
+                }
+            }
         }
     }
+
+    
 
     .img-home-restaurant{
         cursor: pointer;
@@ -254,17 +336,40 @@ $color-background-menu: #FFFFFF;
     h3{
         margin: 1.5em 11.5em 1.5em -2em;
         font-family: 'Shrikhand';
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
     }
 
     .footer-menu{
 
         ul{
             display: block;
+
+            @include laptop-only(){
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            
         }
 
         .footer-list{
             list-style-type: none;
             margin: 1em 2em 1em -4.5em;
+
+            @include laptop-only(){
+                margin: -3em 2em 1em 1em;
+            }
+
+            @include tablette-only(){
+                margin-left: 0em;
+            }
 
             &>.fa-utensils{
                 margin-right: 1em;

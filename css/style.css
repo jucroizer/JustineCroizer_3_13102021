@@ -28,6 +28,16 @@ html, body {
   width: 45%;
   margin-bottom: 0.5em;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .home-header > .home-heading-logo > .home-logo {
+    width: 25%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .home-header > .home-heading-logo > .home-logo {
+    width: 25%;
+  }
+}
 .home-header > .localisation-box {
   text-align: center;
   background-color: #EAEAEA;
@@ -85,13 +95,35 @@ html, body {
 .fonctionnement h2 {
   margin-bottom: 1.5em;
 }
+@media screen and (min-width: 1025px) {
+  .fonctionnement h2 {
+    margin-left: 2em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .fonctionnement h2 {
+    margin-left: 2em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .fonctionnement .fonctionnement-procedure-boxes {
+    display: inline-flex;
+    margin: auto 10% auto 10%;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .fonctionnement .fonctionnement-procedure-boxes {
+    display: flex;
+  }
+}
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes {
   background-color: #f6f6f6;
   border-radius: 15px;
   padding: 0.5em;
   display: flex;
   margin: 2em auto;
-  width: 65%;
+  width: 16em;
   box-shadow: 4px 5px 10px #CECECD;
 }
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers {
@@ -128,7 +160,27 @@ html, body {
 #restaurant h2 {
   margin-bottom: 1.5em;
 }
-#restaurant > .restaurant-choice {
+@media screen and (min-width: 1025px) {
+  #restaurant h2 {
+    margin-left: 2em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #restaurant h2 {
+    margin-left: 2em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #restaurant > .restaurant-box {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #restaurant > .restaurant-box {
+    text-align: center;
+  }
+}
+#restaurant > .restaurant-box > .restaurant-choice {
   margin: 1em auto 2em auto;
   display: block;
   width: 21em;
@@ -136,20 +188,52 @@ html, body {
   border-radius: 20px;
   box-shadow: 4px 5px 10px #CECECD;
 }
-#restaurant > .restaurant-choice > .img-home-restaurant {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #restaurant > .restaurant-box > .restaurant-choice {
+    display: inline-block;
+    margin: 2%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #restaurant > .restaurant-box > .restaurant-choice {
+    display: inline-block;
+    margin: 1% 5%;
+  }
+}
+#restaurant > .restaurant-box > .restaurant-choice > .img-home-restaurant {
   object-fit: cover;
   object-position: 50% 60%;
   width: 100%;
   height: 11em;
   border-radius: 20px 20px 0px 0px;
 }
-#restaurant > .restaurant-choice .restaurant-heading {
+#restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
   margin: 1em 0.5em 0em 1em;
   font-weight: 700;
 }
-#restaurant > .restaurant-choice .restaurant-subheading {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
+    text-align: left;
+  }
+}
+#restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
   margin: 0.3em 0.5em 0.5em 1em;
   font-weight: 300;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
+    text-align: left;
+  }
 }
 #restaurant .img-home-restaurant {
   cursor: pointer;
@@ -195,12 +279,38 @@ html, body {
   margin: 1.5em 11.5em 1.5em -2em;
   font-family: "Shrikhand";
 }
+@media screen and (min-width: 1025px) {
+  .footer h3 {
+    margin-left: 2em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer h3 {
+    margin-left: 2em;
+  }
+}
 .footer .footer-menu ul {
   display: block;
+}
+@media screen and (min-width: 1025px) {
+  .footer .footer-menu ul {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .footer .footer-menu .footer-list {
   list-style-type: none;
   margin: 1em 2em 1em -4.5em;
+}
+@media screen and (min-width: 1025px) {
+  .footer .footer-menu .footer-list {
+    margin: -3em 2em 1em 1em;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer .footer-menu .footer-list {
+    margin-left: 0em;
+  }
 }
 .footer .footer-menu .footer-list > .fa-utensils {
   margin-right: 1em;
