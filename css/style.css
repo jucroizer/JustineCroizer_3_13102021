@@ -33,7 +33,7 @@ html, body {
     width: 25%;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .home-header > .home-heading-logo > .home-logo {
     width: 25%;
   }
@@ -100,7 +100,7 @@ html, body {
 .fonctionnement h2 {
   margin-bottom: 1.5em;
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .fonctionnement h2 {
     margin-left: 2em;
   }
@@ -117,7 +117,7 @@ html, body {
     flex-wrap: wrap;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .fonctionnement .fonctionnement-procedure-boxes {
     display: flex;
   }
@@ -165,7 +165,7 @@ html, body {
 #restaurant h2 {
   margin-bottom: 1.5em;
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   #restaurant h2 {
     margin-left: 2em;
   }
@@ -180,7 +180,7 @@ html, body {
     text-align: center;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box {
     text-align: center;
   }
@@ -199,7 +199,7 @@ html, body {
     margin: 2%;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice {
     display: inline-block;
     margin: 1% 5%;
@@ -221,7 +221,7 @@ html, body {
     text-align: left;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
     text-align: left;
   }
@@ -235,7 +235,7 @@ html, body {
     text-align: left;
   }
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
     text-align: left;
   }
@@ -284,7 +284,7 @@ html, body {
   margin: 1.5em 11.5em 1.5em -2em;
   font-family: "Shrikhand";
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .footer h3 {
     margin-left: 2em;
   }
@@ -297,7 +297,7 @@ html, body {
 .footer .footer-menu ul {
   display: block;
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .footer .footer-menu ul {
     display: flex;
     justify-content: flex-end;
@@ -307,7 +307,7 @@ html, body {
   list-style-type: none;
   margin: 1em 2em 1em -4.5em;
 }
-@media screen and (min-width: 1025px s) {
+@media screen and (min-width: 1025px) {
   .footer .footer-menu .footer-list {
     margin: -3em 2em 1em 1em;
   }
@@ -335,6 +335,11 @@ html, body {
   text-decoration: none;
   color: #000;
 }
+@media screen and (min-width: 1025px) {
+  .restaurant-header i {
+    padding-top: 1.2em;
+  }
+}
 .restaurant-header .restaurant-heading-logo {
   width: 40%;
   padding: 1.5em 1em 1em 4.5em;
@@ -343,6 +348,15 @@ html, body {
   .restaurant-header .restaurant-heading-logo {
     text-align: center;
     margin: auto 19%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .restaurant-header .restaurant-heading-logo {
+    margin: auto 33%;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    width: 30%;
   }
 }
 .restaurant-header .restaurant-heading-logo > .restaurant-logo {
@@ -355,6 +369,13 @@ html, body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .heading-restaurant-img {
     height: 24em;
+    object-fit: cover;
+    object-position: 50% 62%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .heading-restaurant-img {
+    height: 30em;
     object-fit: cover;
     object-position: 50% 62%;
   }
@@ -382,6 +403,12 @@ html, body {
     margin-left: 1.5em;
   }
 }
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .heading-restaurant-menu h2 {
+    margin-left: 2em;
+    font-size: 3em;
+  }
+}
 .restaurant-menu .heading-restaurant-menu .heart {
   position: relative;
   margin-top: 2em;
@@ -392,13 +419,30 @@ html, body {
     margin-right: 4em;
   }
 }
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .heading-restaurant-menu .heart {
+    margin-right: 7em;
+    margin-top: 4em;
+  }
+}
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart {
   font-size: 2em;
+}
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .responsive-menu-laptop {
+    display: flex;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .responsive-menu {
     display: flex;
     justify-content: center;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .responsive-menu {
+    display: flex;
+    width: 100%;
   }
 }
 .restaurant-menu .menu {
@@ -407,6 +451,11 @@ html, body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu {
     width: 90%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .menu {
+    width: 100%;
   }
 }
 .restaurant-menu .menu h3 {
@@ -469,6 +518,12 @@ html, body {
     width: 90%;
   }
 }
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .menu-dessert {
+    margin-top: 3em;
+    width: 53%;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .submenu-dessert {
     width: 30%;
@@ -483,6 +538,14 @@ html, body {
   border-bottom: solid #99E2D0 0.2em;
   width: 15%;
   margin-left: 1em;
+}
+@media screen and (min-width: 1025px) {
+  .restaurant-menu .h3-dessert {
+    position: absolute;
+    top: 9.42em;
+    left: 52.5em;
+    width: 5%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
