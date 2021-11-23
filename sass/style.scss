@@ -131,6 +131,10 @@ $color-background-menu: #FFFFFF;
         @include tablette-only(){
             margin: 0 40% 5% 40%;
         }
+
+        @include laptop-only(){
+            margin: 0 45% 5% 45%;
+        }
     }
 }
 

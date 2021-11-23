@@ -92,6 +92,11 @@ html, body {
     margin: 0 40% 5% 40%;
   }
 }
+@media screen and (min-width: 1025px) {
+  .cta.cta-restaurant {
+    margin: 0 45% 5% 45%;
+  }
+}
 
 .fonctionnement {
   padding: 2em 1em 3em 1em;
