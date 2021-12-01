@@ -23,7 +23,7 @@ $color-background: #f6f6f6;
 $color-footer: #353535;
 $color-hover: #F4EDFF;
 $color-background-menu: #FFFFFF;
-// linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
+$gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
 
 @font-face {
     font-family: 'Shrikhand';
@@ -48,6 +48,59 @@ $color-background-menu: #FFFFFF;
     box-shadow: 4px 5px 10px #CECECD;
 }
 
+
+// Loader
+.loader{
+    position:fixed;
+    width:100%;
+    height: 100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999; 
+    visibility: hidden;
+    animation: loader 3s linear;
+
+    .spin{
+        position:absolute;
+        left:48%;top:40%;
+        width:40px;height:40px;
+        border-color: $color-primary;
+        border-top-color:transparent;
+        border-width: 4px;
+        border-radius:50%;
+        animation: spin 3s linear;
+    }
+    
+}
+
+@keyframes loader{
+    0%{
+        visibility: visible;
+    }
+    100%{
+        visibility: hidden;
+    }
+}
+
+@keyframes spin{
+        0%{
+            visibility: visible;
+            display: block;
+            opacity: 100;
+            transform: rotate(0deg);
+            border-style: solid;
+        }
+        100%{
+            visibility: hidden;
+            background-color: transparent;
+            display: none;
+            opacity: 0;
+            transform: rotate(360deg);
+            border-style: hidden;
+            z-index: -9999;
+        }
+}
+    
 // Header Page d'acceuil
 .home-header{
 
@@ -250,7 +303,7 @@ $color-background-menu: #FFFFFF;
 
         @include laptop-only(){
             display: inline-block;
-            margin: 1% 5%;
+            margin: 1% 6%;
         }
         
             &>.img-home-restaurant{
@@ -322,6 +375,7 @@ $color-background-menu: #FFFFFF;
     .heart{
         position: relative;
         margin: -2.5em 0em 0em 18em;
+        cursor: pointer;
 
         &.heart-box{
             margin: 9em 0em 0em 18em;
@@ -329,7 +383,42 @@ $color-background-menu: #FFFFFF;
 
         .fa-heart{
             font-size: 1.5em;
+            cursor: pointer;
+        
+            &:hover{
+                visibility: hidden;
+            }
+
+            .fas {
+                font-size: 1em;
+                cursor: pointer;
+                position: absolute;
+                left: 0em;
+                color: transparent;
+
+                @include laptop-only(){
+                    left: 0.5em;
+                }
+
+                @include tablette-only(){
+                    left: 0.5em;
+                }
+
+                &:hover{
+                    background: -moz-linear-gradient(top, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%); 
+                    background: -webkit-linear-gradient(top, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%); 
+                    background: linear-gradient(to bottom, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text; 
+                    -webkit-text-fill-color:transparent;
+                    animation: color 2s;
+                    visibility: visible;
+                }
+            }
         }
+
+        
     }
 
 }
@@ -495,9 +584,36 @@ $color-background-menu: #FFFFFF;
 
             .fa-heart{
                 font-size: 2em;
+                cursor: pointer;
+            
+                &:hover{
+                    visibility: hidden;
+                }
+
+                .fas {
+                    font-size: 1em;
+                    cursor: pointer;
+                    position: absolute;
+                    left: 0em;
+                    color: transparent;
+
+                    &:hover{
+                        background: -moz-linear-gradient(top, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%); 
+                        background: -webkit-linear-gradient(top, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%); 
+                        background: linear-gradient(to bottom, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%);
+                        -webkit-background-clip: text;
+                        -moz-background-clip: text;
+                        background-clip: text; 
+                        -webkit-text-fill-color:transparent;
+                        animation: color 2s;
+                        visibility: visible;
+                    }
+                }
             }
         }
     }
+
+
 
     .responsive-menu-laptop{
         @include laptop-only(){
@@ -543,6 +659,7 @@ $color-background-menu: #FFFFFF;
             padding: 0em 1em;
             margin: 1.5em auto;
             width: 85%;
+            
             @include card-shadow();
 
             @include tablette-only(){
@@ -582,6 +699,33 @@ $color-background-menu: #FFFFFF;
                     margin-right: 0.5em;
                 }
             }
+
+            .check-rotate-animation{
+                display: flex;
+                background-color: $color-tertiary;
+                width: 20%;
+                border-radius: 0px 15px 15px 0px;
+                transform-origin: right;
+                transform: scaleX(0);
+                position: relative;
+                top: -5em;
+                left: 84%;
+                height: 5em;
+                transition: transform 300ms 100ms linear;
+
+            &:hover{
+                visibility: visible;
+                animation: check 5s;
+            }
+
+                .rotate-icon-animation{
+                    font-size: 2em;
+                    color: #fff;
+                    margin: auto;
+                    transform: rotate(0deg);
+                    transition: transform 300ms 100ms linear;
+                }
+            }
         }
         
     }
@@ -589,13 +733,21 @@ $color-background-menu: #FFFFFF;
     .menu-dessert{
         @include tablette-only(){
             display: flex;
+            flex-direction: column;
             margin: auto auto;
             width: 90%;
         }
 
         @include laptop-only(){
-            margin-top: 3em;;
             width: 53%;
+        }
+
+        .dessert-menu{
+            @include tablette-only(){
+               display: flex;
+                flex-direction: row; 
+            }
+            
         }
 
         .submenu-dessert{
@@ -608,23 +760,26 @@ $color-background-menu: #FFFFFF;
         
     }
 
-    h3{
-        text-transform: uppercase;
-        font-weight: 200;
-        font-size: 1.1em;
-        padding-bottom: 0.3em;
-        border-bottom: solid $color-tertiary 0.2em;
-        width: 15%;
-        margin-left: 1em;
-    }
+}
 
-    .h3-dessert{
-        @include laptop-only(){
-            position: absolute;
-            top: 9.42em;
-            left: 52.5em;
-            width: 5%;  
-        }
-    }
 
+//animation check rotate
+@keyframes check{
+    0%{
+        transform: translateX(-9999);
+        visibility: hidden;
+    }
+    100%{
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+@keyframes color{
+    0%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
 }

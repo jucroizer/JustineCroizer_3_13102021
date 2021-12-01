@@ -13,9 +13,10 @@ html, body {
 }
 
 @font-face {
-  font-family: "Shrikhand";
+  font-family: 'Shrikhand';
   src: url("font/Shrikhand/Shrikhand-Regular.ttf") format(truetype);
 }
+
 .loader {
   position: fixed;
   width: 100%;
@@ -27,8 +28,10 @@ html, body {
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 9999;
   visibility: hidden;
-  animation: loader 3s linear;
+  -webkit-animation: loader 3s linear;
+          animation: loader 3s linear;
 }
+
 .loader .spin {
   position: absolute;
   left: 48%;
@@ -39,7 +42,17 @@ html, body {
   border-top-color: transparent;
   border-width: 4px;
   border-radius: 50%;
-  animation: spin 3s linear;
+  -webkit-animation: spin 3s linear;
+          animation: spin 3s linear;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
 }
 
 @keyframes loader {
@@ -50,12 +63,14 @@ html, body {
     visibility: hidden;
   }
 }
-@keyframes spin {
+
+@-webkit-keyframes spin {
   0% {
     visibility: visible;
     display: block;
     opacity: 100;
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     border-style: solid;
   }
   100% {
@@ -63,33 +78,62 @@ html, body {
     background-color: transparent;
     display: none;
     opacity: 0;
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     border-style: hidden;
     z-index: -9999;
   }
 }
+
+@keyframes spin {
+  0% {
+    visibility: visible;
+    display: block;
+    opacity: 100;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    border-style: solid;
+  }
+  100% {
+    visibility: hidden;
+    background-color: transparent;
+    display: none;
+    opacity: 0;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    border-style: hidden;
+    z-index: -9999;
+  }
+}
+
 .home-header {
   text-align: center;
   padding-top: 1em;
 }
+
 .home-header > .home-heading-logo {
-  box-shadow: 0px 5px 5px #DDDDDD;
+  -webkit-box-shadow: 0px 5px 5px #DDDDDD;
+          box-shadow: 0px 5px 5px #DDDDDD;
 }
+
 .home-header > .home-heading-logo > .home-logo {
   margin-bottom: 1em;
   width: 45%;
   margin-bottom: 0.5em;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .home-header > .home-heading-logo > .home-logo {
     width: 25%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .home-header > .home-heading-logo > .home-logo {
     width: 25%;
   }
 }
+
 .home-header > .localisation-box {
   text-align: center;
   background-color: #EAEAEA;
@@ -97,10 +141,12 @@ html, body {
   position: relative;
   z-index: -5;
 }
+
 .home-header > .localisation-box > .fa-map-marker-alt {
   font-size: 1em;
   margin-left: 3em;
 }
+
 .home-header > .localisation-box > .search-box {
   border-style: none;
   font-family: Roboto, sans-serif;
@@ -117,6 +163,7 @@ html, body {
   background-color: #f6f6f6;
   font-size: 1.2em;
 }
+
 .home-title > h2 {
   font-size: 0.7em;
   font-weight: 200;
@@ -132,18 +179,22 @@ html, body {
   font-size: 1em;
   color: #fff;
   cursor: pointer;
-  box-shadow: 4px 5px 10px #CECECD;
+  -webkit-box-shadow: 4px 5px 10px #CECECD;
+          box-shadow: 4px 5px 10px #CECECD;
 }
+
 .cta.cta-restaurant {
   margin: 0em 7em 2em 7em;
   padding: 1em 2.5em;
   font-weight: bold;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .cta.cta-restaurant {
     margin: 0 40% 5% 40%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .cta.cta-restaurant {
     margin: 0 45% 5% 45%;
@@ -154,40 +205,55 @@ html, body {
   padding: 2em 1em 3em 1em;
   display: block;
 }
+
 .fonctionnement h2 {
   margin-bottom: 1.5em;
 }
+
 @media screen and (min-width: 1025px) {
   .fonctionnement h2 {
     margin-left: 2em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .fonctionnement h2 {
     margin-left: 2em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .fonctionnement .fonctionnement-procedure-boxes {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     margin: auto 10% auto 10%;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .fonctionnement .fonctionnement-procedure-boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes {
   background-color: #f6f6f6;
   border-radius: 15px;
   padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 2em auto;
   width: 16em;
-  box-shadow: 4px 5px 10px #CECECD;
+  -webkit-box-shadow: 4px 5px 10px #CECECD;
+          box-shadow: 4px 5px 10px #CECECD;
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers {
   position: absolute;
   border-radius: 100px;
@@ -195,6 +261,7 @@ html, body {
   margin-top: 0.5em;
   margin-left: -1.5em;
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers > p {
   height: 0em;
   width: 1.9em;
@@ -203,13 +270,16 @@ html, body {
   top: -0.5em;
   color: #fff;
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-icons {
   margin: 1em 1em 0em 1.5em;
   color: #7D7C7D;
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-icons .fa-mobile-alt {
   margin-right: 0.3em;
 }
+
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-text {
   font-weight: 500;
 }
@@ -219,91 +289,112 @@ html, body {
   padding: 2em 1em;
   background-color: #f6f6f6;
 }
+
 #restaurant h2 {
   margin-bottom: 1.5em;
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant h2 {
     margin-left: 2em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant h2 {
     margin-left: 2em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant > .restaurant-box {
     text-align: center;
   }
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box {
     text-align: center;
   }
 }
+
 #restaurant > .restaurant-box > .restaurant-choice {
   margin: 1em auto 2em auto;
   display: block;
   width: 21em;
   height: 16em;
   border-radius: 20px;
-  box-shadow: 4px 5px 10px #CECECD;
+  -webkit-box-shadow: 4px 5px 10px #CECECD;
+          box-shadow: 4px 5px 10px #CECECD;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant > .restaurant-box > .restaurant-choice {
     display: inline-block;
     margin: 2%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice {
     display: inline-block;
     margin: 1% 6%;
   }
 }
+
 #restaurant > .restaurant-box > .restaurant-choice > .img-home-restaurant {
-  object-fit: cover;
-  object-position: 50% 60%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 60%;
+     object-position: 50% 60%;
   width: 100%;
   height: 11em;
   border-radius: 20px 20px 0px 0px;
 }
+
 #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
   margin: 1em 0.5em 0em 1em;
   font-weight: 700;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
     text-align: left;
   }
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-heading {
     text-align: left;
   }
 }
+
 #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
   margin: 0.3em 0.5em 0.5em 1em;
   font-weight: 300;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
     text-align: left;
   }
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant > .restaurant-box > .restaurant-choice .restaurant-subheading {
     text-align: left;
   }
 }
+
 #restaurant .img-home-restaurant {
   cursor: pointer;
 }
+
 #restaurant .menu-link {
   text-decoration: none;
   color: #000;
 }
+
 #restaurant .new-restaurant-box {
   position: relative;
   background-color: #99E2D0;
@@ -315,26 +406,32 @@ html, body {
   margin: -14em 0em 0em 14.5em;
   text-align: center;
 }
+
 #restaurant .new-restaurant-box p {
   margin: 0.5em;
   font-size: 1em;
   color: #038C65;
 }
+
 #restaurant .heart {
   position: relative;
   margin: -2.5em 0em 0em 18em;
   cursor: pointer;
 }
+
 #restaurant .heart.heart-box {
   margin: 9em 0em 0em 18em;
 }
+
 #restaurant .heart .fa-heart {
   font-size: 1.5em;
   cursor: pointer;
 }
+
 #restaurant .heart .fa-heart:hover {
   visibility: hidden;
 }
+
 #restaurant .heart .fa-heart .fas {
   font-size: 1em;
   cursor: pointer;
@@ -342,25 +439,27 @@ html, body {
   left: 0em;
   color: transparent;
 }
+
 @media screen and (min-width: 1025px) {
   #restaurant .heart .fa-heart .fas {
     left: 0.5em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   #restaurant .heart .fa-heart .fas {
     left: 0.5em;
   }
 }
+
 #restaurant .heart .fa-heart .fas:hover {
-  background: -moz-linear-gradient(top, #9356dc 0%, #ff79da 100%);
-  background: -webkit-linear-gradient(top, #9356dc 0%, #ff79da 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: color 2s;
+  -webkit-animation: color 2s;
+          animation: color 2s;
   visibility: visible;
 }
 
@@ -370,54 +469,71 @@ html, body {
   background-color: #353535;
   color: #fff;
 }
+
 .footer h3 {
   margin: 1.5em 11.5em 1.5em -2em;
-  font-family: "Shrikhand";
+  font-family: 'Shrikhand';
 }
+
 @media screen and (min-width: 1025px) {
   .footer h3 {
     margin-left: 2em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .footer h3 {
     margin-left: 2em;
   }
 }
+
 .footer .footer-menu ul {
   display: block;
 }
+
 @media screen and (min-width: 1025px) {
   .footer .footer-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
+
 .footer .footer-menu .footer-list {
   list-style-type: none;
   margin: 1em 2em 1em -4.5em;
 }
+
 @media screen and (min-width: 1025px) {
   .footer .footer-menu .footer-list {
     margin: -3em 2em 1em 1em;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .footer .footer-menu .footer-list {
     margin-left: 0em;
   }
 }
+
 .footer .footer-menu .footer-list > .fa-utensils {
   margin-right: 1em;
 }
+
 .footer .footer-menu .footer-list > .fa-hands-helping {
   margin-right: 1em;
   font-size: 0.8em;
 }
 
 .restaurant-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .restaurant-header i {
   width: 20%;
   font-size: 1.5em;
@@ -425,21 +541,25 @@ html, body {
   text-decoration: none;
   color: #000;
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-header i {
     padding-top: 1.2em;
   }
 }
+
 .restaurant-header .restaurant-heading-logo {
   width: 40%;
   padding: 1.5em 1em 1em 4.5em;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-header .restaurant-heading-logo {
     text-align: center;
     margin: auto 19%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-header .restaurant-heading-logo {
     margin: auto 33%;
@@ -449,6 +569,7 @@ html, body {
     width: 30%;
   }
 }
+
 .restaurant-header .restaurant-heading-logo > .restaurant-logo {
   width: 60%;
 }
@@ -456,18 +577,24 @@ html, body {
 .heading-restaurant-img {
   width: 100%;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .heading-restaurant-img {
     height: 24em;
-    object-fit: cover;
-    object-position: 50% 62%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 62%;
+       object-position: 50% 62%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .heading-restaurant-img {
     height: 30em;
-    object-fit: cover;
-    object-position: 50% 62%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50% 62%;
+       object-position: 50% 62%;
   }
 }
 
@@ -478,50 +605,64 @@ html, body {
   padding: 1em 1em;
   margin: -4em auto 0 auto;
 }
+
 .restaurant-menu .heading-restaurant-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .restaurant-menu .heading-restaurant-menu h2 {
-  font-family: "Shrikhand";
+  font-family: 'Shrikhand';
   font-size: 2em;
   font-weight: 100;
   margin-left: 0.5em;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .heading-restaurant-menu h2 {
     margin-left: 1.5em;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .heading-restaurant-menu h2 {
     margin-left: 2em;
     font-size: 3em;
   }
 }
+
 .restaurant-menu .heading-restaurant-menu .heart {
   position: relative;
   margin-top: 2em;
   margin-right: 1em;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .heading-restaurant-menu .heart {
     margin-right: 4em;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .heading-restaurant-menu .heart {
     margin-right: 7em;
     margin-top: 4em;
   }
 }
+
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart {
   font-size: 2em;
   cursor: pointer;
 }
+
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart:hover {
   visibility: hidden;
 }
+
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart .fas {
   font-size: 1em;
   cursor: pointer;
@@ -529,47 +670,62 @@ html, body {
   left: 0em;
   color: transparent;
 }
+
 .restaurant-menu .heading-restaurant-menu .heart .fa-heart .fas:hover {
-  background: -moz-linear-gradient(top, #9356dc 0%, #ff79da 100%);
-  background: -webkit-linear-gradient(top, #9356dc 0%, #ff79da 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background: linear-gradient(to bottom, #9356dc 0%, #ff79da 100%);
   -webkit-background-clip: text;
-  -moz-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: color 2s;
+  -webkit-animation: color 2s;
+          animation: color 2s;
   visibility: visible;
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .responsive-menu-laptop {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .responsive-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .responsive-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
 }
+
 .restaurant-menu .menu {
   margin-bottom: 3em;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu {
     width: 90%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .menu {
     width: 100%;
   }
 }
+
 .restaurant-menu .menu h3 {
   text-transform: uppercase;
   font-weight: 200;
@@ -579,19 +735,23 @@ html, body {
   width: 15%;
   margin-left: 1em;
 }
+
 .restaurant-menu .menu .submenu {
   background-color: #FFFFFF;
   border-radius: 15px;
   padding: 0em 1em;
   margin: 1.5em auto;
   width: 85%;
-  box-shadow: 4px 5px 10px #CECECD;
+  -webkit-box-shadow: 4px 5px 10px #CECECD;
+          box-shadow: 4px 5px 10px #CECECD;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu .submenu {
     width: 80%;
   }
 }
+
 .restaurant-menu .menu .submenu h4 {
   padding-top: 1em;
   margin: 1em 0em 0em 0em;
@@ -601,15 +761,22 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu .submenu h4 {
     margin-top: 0em;
   }
 }
+
 .restaurant-menu .menu .submenu .submenu-detail {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .restaurant-menu .menu .submenu .submenu-detail p {
   font-size: 0.95em;
   font-weight: 200;
@@ -618,54 +785,84 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .restaurant-menu .menu .submenu .submenu-detail .submenu-prix {
   text-overflow: clip;
   font-weight: 600;
   margin-right: 0.5em;
 }
+
 .restaurant-menu .menu .submenu .check-rotate-animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #99E2D0;
   width: 20%;
   border-radius: 0px 15px 15px 0px;
-  transform-origin: right;
-  transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
   position: relative;
   top: -5em;
   left: 84%;
   height: 5em;
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
 }
+
 .restaurant-menu .menu .submenu .check-rotate-animation:hover {
   visibility: visible;
-  animation: check 5s;
+  -webkit-animation: check 5s;
+          animation: check 5s;
 }
+
 .restaurant-menu .menu .submenu .check-rotate-animation .rotate-icon-animation {
   font-size: 2em;
   color: #fff;
   margin: auto;
-  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 300ms 100ms linear;
+  transition: -webkit-transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     margin: auto auto;
     width: 90%;
   }
 }
+
 @media screen and (min-width: 1025px) {
   .restaurant-menu .menu-dessert {
     width: 53%;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .dessert-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .submenu-dessert {
     width: 30%;
@@ -673,17 +870,33 @@ html, body {
   }
 }
 
-@keyframes check {
+@-webkit-keyframes check {
   0% {
-    transform: translateX(-9999);
+    -webkit-transform: translateX(-9999);
+            transform: translateX(-9999);
     visibility: hidden;
   }
   100% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     visibility: visible;
   }
 }
-@keyframes color {
+
+@keyframes check {
+  0% {
+    -webkit-transform: translateX(-9999);
+            transform: translateX(-9999);
+    visibility: hidden;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes color {
   0% {
     opacity: 0.5;
   }
@@ -692,4 +905,12 @@ html, body {
   }
 }
 
+@keyframes color {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=style.css.map */
