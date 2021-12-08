@@ -438,13 +438,12 @@ html, body {
   }
 }
 .restaurant-header .restaurant-heading-logo {
-  width: 40%;
+  width: 70%;
   padding: 1.5em 1em 1em 4.5em;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-header .restaurant-heading-logo {
-    text-align: center;
-    margin: auto 19%;
+    margin: auto 20% auto 24%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -462,6 +461,24 @@ html, body {
 
 .heading-restaurant-img {
   width: 100%;
+}
+.heading-restaurant-img.note-enchantee {
+  height: 15em;
+  object-fit: cover;
+  object-position: 50% 81%;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .heading-restaurant-img.note-enchantee {
+    height: 20em;
+    object-position: 50% 75%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .heading-restaurant-img.note-enchantee {
+    height: 30em;
+    object-fit: cover;
+    object-position: 50% 62%;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .heading-restaurant-img {
@@ -622,6 +639,9 @@ html, body {
 }
 .restaurant-menu .menu .submenu:nth-child(4) {
   animation: menu 1s 3200ms forwards;
+}
+.restaurant-menu .menu .submenu:nth-child(5) {
+  animation: menu 1s 4000ms forwards;
 }
 .restaurant-menu .menu .submenu_detail {
   width: 75%;

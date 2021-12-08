@@ -515,12 +515,11 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
     }
 
     .restaurant-heading-logo{
-        width: 40%;
+        width: 70%;
         padding: 1.5em 1em 1em 4.5em;
 
         @include tablette-only(){
-            text-align: center;
-            margin:  auto 19%;
+            margin:  auto 20% auto 24%;
         }
 
         @include laptop-only(){
@@ -541,6 +540,21 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
 // Photo background
 .heading-restaurant-img{
     width: 100%;
+
+    &.note-enchantee{
+        height: 15em;
+        object-fit: cover;
+        object-position: 50% 81%;
+        @include tablette-only(){
+            height: 20em;
+            object-position: 50% 75%;
+        }
+        @include laptop-only(){
+            height: 30em;
+            object-fit: cover;
+            object-position: 50% 62%;
+        }
+    }
 
     @include tablette-only(){
         height: 24em;
@@ -693,7 +707,7 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
             }
 
              
-            @for $i from 1 through (4) {  
+            @for $i from 1 through (5) {  
                 &:nth-child(#{$i}){
                     animation: menu 1s 800ms*$i forwards;
                 }
