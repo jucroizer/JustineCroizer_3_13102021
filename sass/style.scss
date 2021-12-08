@@ -695,7 +695,7 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
              
             @for $i from 1 through (4) {  
                 &:nth-child(#{$i}){
-                    animation: menu 2s 1000ms*$i forwards;
+                    animation: menu 1s 800ms*$i forwards;
                 }
             }
 
@@ -705,7 +705,7 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
                 transform: scaleX(1);
                 transform-origin: left;
                 justify-content: space-between;
-                white-space: nowrap;
+            
                 @include check-transition-timing(width);
                 
                 .submenu_title{
@@ -713,12 +713,16 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
                     font-size: 1.1rem;
                     margin-bottom: 5px;
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
                 p{
                     font-size: 0.95em;
                     font-weight: 200;
                     margin-top: 0.5em;
+                    white-space: nowrap;
+                    overflow: hidden;
                     text-overflow: ellipsis;
                 }   
                 
@@ -755,12 +759,9 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
                 cursor: pointer;
             }
             &:hover .submenu-detail{
-                width: 40%;
+                width: 30%;
                 .submenu_title, p{
-                    width: 40%;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
+                    width: 30%;
                 }
             }
             &:hover .check-rotate-animation{
@@ -789,22 +790,15 @@ $color-primary-transparency : rgba(147, 86, 220, 0.2);
         }
         h3{
             @include tablette-only(){
-                margin-left: 1.5em;
-                width: 15%;
+                margin: auto 66% 1.5% 28%;
+                width: 10%;
             }
-        }
-        .dessert-menu{
-            @include tablette-only(){
-                display: flex;
-                flex-direction: row; 
-            }
-            
         }
 
         .submenu-dessert{
             @include tablette-only(){
-                width: 30%;
-                margin: 0 auto;
+                width: 45%;
+                margin: 0.5em auto;
             }
 
             .submenu-detail{

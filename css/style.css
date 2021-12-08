@@ -612,16 +612,16 @@ html, body {
   }
 }
 .restaurant-menu .menu .submenu:nth-child(1) {
-  animation: menu 2s 1000ms forwards;
+  animation: menu 1s 800ms forwards;
 }
 .restaurant-menu .menu .submenu:nth-child(2) {
-  animation: menu 2s 2000ms forwards;
+  animation: menu 1s 1600ms forwards;
 }
 .restaurant-menu .menu .submenu:nth-child(3) {
-  animation: menu 2s 3000ms forwards;
+  animation: menu 1s 2400ms forwards;
 }
 .restaurant-menu .menu .submenu:nth-child(4) {
-  animation: menu 2s 4000ms forwards;
+  animation: menu 1s 3200ms forwards;
 }
 .restaurant-menu .menu .submenu_detail {
   width: 75%;
@@ -629,7 +629,6 @@ html, body {
   transform: scaleX(1);
   transform-origin: left;
   justify-content: space-between;
-  white-space: nowrap;
   transition: width 300ms 100ms linear;
 }
 .restaurant-menu .menu .submenu_detail .submenu_title {
@@ -637,11 +636,15 @@ html, body {
   font-size: 1.1rem;
   margin-bottom: 5px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .restaurant-menu .menu .submenu_detail p {
   font-size: 0.95em;
   font-weight: 200;
   margin-top: 0.5em;
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 .restaurant-menu .menu .submenu_prix {
@@ -672,13 +675,10 @@ html, body {
   cursor: pointer;
 }
 .restaurant-menu .menu .submenu:hover .submenu-detail {
-  width: 40%;
+  width: 30%;
 }
 .restaurant-menu .menu .submenu:hover .submenu-detail .submenu_title, .restaurant-menu .menu .submenu:hover .submenu-detail p {
-  width: 40%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  width: 30%;
 }
 .restaurant-menu .menu .submenu:hover .check-rotate-animation {
   transform: scaleX(1);
@@ -704,20 +704,14 @@ html, body {
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert h3 {
-    margin-left: 1.5em;
-    width: 15%;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .restaurant-menu .menu-dessert .dessert-menu {
-    display: flex;
-    flex-direction: row;
+    margin: auto 66% 1.5% 28%;
+    width: 10%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .submenu-dessert {
-    width: 30%;
-    margin: 0 auto;
+    width: 45%;
+    margin: 0.5em auto;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
