@@ -39,7 +39,7 @@ html, body {
   border-top-color: transparent;
   border-width: 4px;
   border-radius: 50%;
-  animation: spin 3s linear;
+  animation: spin 5s linear;
 }
 
 @keyframes loader {
@@ -63,7 +63,7 @@ html, body {
     background-color: transparent;
     display: none;
     opacity: 0;
-    transform: rotate(360deg);
+    transform: rotate(1080deg);
     border-style: hidden;
     z-index: -9999;
   }
@@ -135,18 +135,18 @@ html, body {
   box-shadow: 4px 5px 10px #CECECD;
 }
 .cta.cta-restaurant {
-  margin: 0em 7em 2em 7em;
+  margin: 5% 23% 10% 23%;
   padding: 1em 2.5em;
   font-weight: bold;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .cta.cta-restaurant {
-    margin: 0 40% 5% 40%;
+    margin: 5% 40% 5% 40%;
   }
 }
 @media screen and (min-width: 1025px) {
   .cta.cta-restaurant {
-    margin: 0 45% 5% 45%;
+    margin: 5% 45% 5% 45%;
   }
 }
 
@@ -187,6 +187,13 @@ html, body {
   margin: 2em auto;
   width: 16em;
   box-shadow: 4px 5px 10px #CECECD;
+}
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes:hover {
+  cursor: pointer;
+  background-color: rgba(147, 86, 220, 0.2);
+}
+.fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes:hover .procedure-icons {
+  color: #9356DC;
 }
 .fonctionnement .fonctionnement-procedure-boxes > .procedure-boxes > .procedure-numbers {
   position: absolute;
@@ -543,6 +550,7 @@ html, body {
 @media screen and (min-width: 1025px) {
   .restaurant-menu .responsive-menu-laptop {
     display: flex;
+    margin-left: 3em;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -558,11 +566,11 @@ html, body {
   }
 }
 .restaurant-menu .menu {
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu {
-    width: 90%;
+    width: 100%;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -579,12 +587,23 @@ html, body {
   width: 15%;
   margin-left: 1em;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restaurant-menu .menu h3 {
+    margin-left: 3em;
+  }
+}
 .restaurant-menu .menu .submenu {
+  display: flex;
+  justify-content: space-between;
   background-color: #FFFFFF;
-  border-radius: 15px;
-  padding: 0em 1em;
-  margin: 1.5em auto;
-  width: 85%;
+  margin: 1em auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 90%;
+  height: 5em;
+  opacity: 0;
   box-shadow: 4px 5px 10px #CECECD;
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -592,60 +611,83 @@ html, body {
     width: 80%;
   }
 }
-.restaurant-menu .menu .submenu h4 {
-  padding-top: 1em;
-  margin: 1em 0em 0em 0em;
-  font-weight: 600;
-  font-size: 1.1em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.restaurant-menu .menu .submenu:nth-child(1) {
+  animation: menu 2s 1000ms forwards;
 }
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .restaurant-menu .menu .submenu h4 {
-    margin-top: 0em;
-  }
+.restaurant-menu .menu .submenu:nth-child(2) {
+  animation: menu 2s 2000ms forwards;
 }
-.restaurant-menu .menu .submenu .submenu-detail {
-  display: flex;
+.restaurant-menu .menu .submenu:nth-child(3) {
+  animation: menu 2s 3000ms forwards;
+}
+.restaurant-menu .menu .submenu:nth-child(4) {
+  animation: menu 2s 4000ms forwards;
+}
+.restaurant-menu .menu .submenu_detail {
+  width: 75%;
+  margin: 0.5em 0em 0.5em 1em;
+  transform: scaleX(1);
+  transform-origin: left;
   justify-content: space-between;
+  white-space: nowrap;
+  transition: width 300ms 100ms linear;
 }
-.restaurant-menu .menu .submenu .submenu-detail p {
+.restaurant-menu .menu .submenu_detail .submenu_title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+.restaurant-menu .menu .submenu_detail p {
   font-size: 0.95em;
   font-weight: 200;
   margin-top: 0.5em;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
-.restaurant-menu .menu .submenu .submenu-detail .submenu-prix {
-  text-overflow: clip;
-  font-weight: 600;
-  margin-right: 0.5em;
+.restaurant-menu .menu .submenu_prix {
+  align-self: flex-end;
+  font-weight: 700;
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  transform-origin: right;
+  transition: transform 300ms 100ms linear;
 }
 .restaurant-menu .menu .submenu .check-rotate-animation {
   display: flex;
   background-color: #99E2D0;
-  width: 20%;
-  border-radius: 0px 15px 15px 0px;
+  width: 70px;
   transform-origin: right;
   transform: scaleX(0);
-  position: relative;
-  top: -5em;
-  left: 84%;
-  height: 5em;
   transition: transform 300ms 100ms linear;
 }
-.restaurant-menu .menu .submenu .check-rotate-animation:hover {
-  visibility: visible;
-  animation: check 5s;
-}
 .restaurant-menu .menu .submenu .check-rotate-animation .rotate-icon-animation {
-  font-size: 2em;
-  color: #fff;
+  color: #FFFFFF;
+  font-size: 1.6rem;
   margin: auto;
   transform: rotate(0deg);
   transition: transform 300ms 100ms linear;
+}
+.restaurant-menu .menu .submenu:hover {
+  cursor: pointer;
+}
+.restaurant-menu .menu .submenu:hover .submenu-detail {
+  width: 40%;
+}
+.restaurant-menu .menu .submenu:hover .submenu-detail .submenu_title, .restaurant-menu .menu .submenu:hover .submenu-detail p {
+  width: 40%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.restaurant-menu .menu .submenu:hover .check-rotate-animation {
+  transform: scaleX(1);
+}
+.restaurant-menu .menu .submenu:hover .rotate-icon-animation {
+  transform: rotate(-360deg);
+}
+.restaurant-menu .menu .submenu:hover .submenu_prix {
+  transform: translateX(-70px);
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert {
@@ -661,6 +703,12 @@ html, body {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restaurant-menu .menu-dessert h3 {
+    margin-left: 1.5em;
+    width: 15%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .dessert-menu {
     display: flex;
     flex-direction: row;
@@ -669,26 +717,26 @@ html, body {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu-dessert .submenu-dessert {
     width: 30%;
-    margin: 1% 1% 5% auto;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .restaurant-menu .menu-dessert .submenu-dessert .submenu-detail {
+    width: 65%;
   }
 }
 
-@keyframes check {
+@keyframes menu {
   0% {
-    transform: translateX(-9999);
-    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
   }
-  100% {
-    transform: translateX(0);
-    visibility: visible;
-  }
-}
-@keyframes color {
-  0% {
+  50% {
     opacity: 0.5;
   }
   100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

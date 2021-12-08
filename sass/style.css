@@ -746,6 +746,16 @@ html, body {
           box-shadow: 4px 5px 10px #CECECD;
 }
 
+.restaurant-menu .menu .submenu:hover .check-rotate-animation {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.restaurant-menu .menu .submenu:hover .rotate-icon-animation {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .restaurant-menu .menu .submenu {
     width: 80%;
@@ -800,23 +810,14 @@ html, body {
   width: 20%;
   border-radius: 0px 15px 15px 0px;
   -webkit-transform-origin: right;
-          transform-origin: right;
+  transform-origin: right;
   -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  position: relative;
-  top: -5em;
-  left: 84%;
-  height: 5em;
+  transform: scaleX(1);
   -webkit-transition: -webkit-transform 300ms 100ms linear;
   transition: -webkit-transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear, -webkit-transform 300ms 100ms linear;
-}
-
-.restaurant-menu .menu .submenu .check-rotate-animation:hover {
-  visibility: visible;
-  -webkit-animation: check 5s;
-          animation: check 5s;
+  transition: transform 300ms 100ms linear,  -webkit-transform 300ms 100ms linear;
 }
 
 .restaurant-menu .menu .submenu .check-rotate-animation .rotate-icon-animation {
@@ -824,7 +825,7 @@ html, body {
   color: #fff;
   margin: auto;
   -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
   -webkit-transition: -webkit-transform 300ms 100ms linear;
   transition: -webkit-transform 300ms 100ms linear;
   transition: transform 300ms 100ms linear;

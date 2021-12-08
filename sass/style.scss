@@ -24,6 +24,8 @@ $color-footer: #353535;
 $color-hover: #F4EDFF;
 $color-background-menu: #FFFFFF;
 $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
+$check-transition-width: 70px;
+$color-primary-transparency : rgba(147, 86, 220, 0.2);
 
 @font-face {
     font-family: 'Shrikhand';
@@ -48,6 +50,10 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
     box-shadow: 4px 5px 10px #CECECD;
 }
 
+@mixin check-transition-timing($type){
+    transition: $type 300ms 100ms linear;
+}
+
 
 // Loader
 .loader{
@@ -68,7 +74,7 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
         border-top-color:transparent;
         border-width: 4px;
         border-radius:50%;
-        animation: spin 3s linear;
+        animation: spin 5s linear;
     }
     
 }
@@ -95,7 +101,7 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
             background-color: transparent;
             display: none;
             opacity: 0;
-            transform: rotate(360deg);
+            transform: rotate(1080deg);
             border-style: hidden;
             z-index: -9999;
         }
@@ -177,16 +183,16 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
     @include card-shadow();
 
     &.cta-restaurant{
-        margin: 0em 7em 2em 7em;
+        margin: 5% 23% 10% 23%;
         padding: 1em 2.5em;
         font-weight: bold;
 
         @include tablette-only(){
-            margin: 0 40% 5% 40%;
+            margin: 5% 40% 5% 40%;
         }
 
         @include laptop-only(){
-            margin: 0 45% 5% 45%;
+            margin: 5% 45% 5% 45%;
         }
     }
 }
@@ -229,6 +235,14 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
             width: 16em;
             @include card-shadow();
 
+            &:hover{
+                cursor: pointer;
+                background-color: $color-primary-transparency;
+                .procedure-icons{
+                    color: #9356DC;
+                }
+            }
+
             &>.procedure-numbers{
                 position: absolute;
                 border-radius: 100px;
@@ -249,6 +263,7 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
         &>.procedure-icons{
             margin: 1em 1em 0em 1.5em;
             color: #7D7C7D;
+
             .fa-mobile-alt{
                 margin-right: 0.3em;
             }
@@ -618,6 +633,7 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
     .responsive-menu-laptop{
         @include laptop-only(){
             display: flex;
+            margin-left: 3em;
         }
     }
 
@@ -626,6 +642,7 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
             display: flex;
             justify-content: center;
         }
+
         @include laptop-only(){
             display: flex;
             width: 100%;
@@ -633,10 +650,9 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
     }
 
     .menu{
-        margin-bottom: 3em;
-        
+        margin-bottom: 2em;
         @include tablette-only(){
-            width: 90%;
+            width: 100%;
         }
 
         @include laptop-only(){
@@ -650,81 +666,111 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
             padding-bottom: 0.3em;
             border-bottom: solid $color-tertiary 0.2em;
             width: 15%;
-            margin-left: 1em;            
+            margin-left: 1em;
+            
+            @include tablette-only(){
+                margin-left: 3em;
+            }
         }
 
         .submenu{
-            background-color: $color-background-menu;
-            border-radius: 15px;
-            padding: 0em 1em;
-            margin: 1.5em auto;
-            width: 85%;
-            
+            display: flex;
+            justify-content: space-between;
+            background-color: #FFFFFF;
+            margin: 1em auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 90%;
+            height: 5em;
+            opacity: 0;
+
             @include card-shadow();
 
             @include tablette-only(){
                 width: 80%;
             }
-            
-            h4{
-                padding-top: 1em;
-                margin: 1em 0em 0em 0em;
-                font-weight: 600;
-                font-size: 1.1em;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
 
-                @include tablette-only(){
-                    margin-top: 0em;
+             
+            @for $i from 1 through (4) {  
+                &:nth-child(#{$i}){
+                    animation: menu 2s 1000ms*$i forwards;
                 }
             }
 
-            .submenu-detail{
-                display: flex;
+            &_detail{
+                width: 75%;
+                margin: 0.5em 0em 0.5em 1em;
+                transform: scaleX(1);
+                transform-origin: left;
                 justify-content: space-between;
+                white-space: nowrap;
+                @include check-transition-timing(width);
+                
+                .submenu_title{
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    margin-bottom: 5px;
+                    white-space: nowrap;
+                }
 
                 p{
                     font-size: 0.95em;
                     font-weight: 200;
                     margin-top: 0.5em;
-                    white-space: nowrap;
-                    overflow: hidden;
                     text-overflow: ellipsis;
-                }
-
-                .submenu-prix{
-                    text-overflow: clip;
-                    font-weight: 600;
-                    margin-right: 0.5em;
-                }
+                }   
+                
             }
+
+            &_prix{
+                align-self: flex-end;
+                font-weight: 700;
+                position: absolute;
+                right: 1em;
+                bottom: 1em;
+                transform-origin: right;
+                @include check-transition-timing(transform);
+            }   
 
             .check-rotate-animation{
                 display: flex;
                 background-color: $color-tertiary;
-                width: 20%;
-                border-radius: 0px 15px 15px 0px;
+                width: $check-transition-width;
                 transform-origin: right;
                 transform: scaleX(0);
-                position: relative;
-                top: -5em;
-                left: 84%;
-                height: 5em;
-                transition: transform 300ms 100ms linear;
-
-            &:hover{
-                visibility: visible;
-                animation: check 5s;
-            }
-
+                @include check-transition-timing(transform);
+                
                 .rotate-icon-animation{
-                    font-size: 2em;
-                    color: #fff;
+                    color: #FFFFFF;
+                    font-size: 1.6rem;
                     margin: auto;
                     transform: rotate(0deg);
-                    transition: transform 300ms 100ms linear;
+                    @include check-transition-timing(transform);
                 }
+            }
+            
+            &:hover{
+                cursor: pointer;
+            }
+            &:hover .submenu-detail{
+                width: 40%;
+                .submenu_title, p{
+                    width: 40%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+            &:hover .check-rotate-animation{
+                transform: scaleX(1);
+            }
+            &:hover .rotate-icon-animation{
+                transform: rotate(-360deg);
+            }
+            &:hover .submenu_prix{
+                transform: translateX(-$check-transition-width);
             }
         }
         
@@ -741,10 +787,15 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
         @include laptop-only(){
             width: 53%;
         }
-
+        h3{
+            @include tablette-only(){
+                margin-left: 1.5em;
+                width: 15%;
+            }
+        }
         .dessert-menu{
             @include tablette-only(){
-               display: flex;
+                display: flex;
                 flex-direction: row; 
             }
             
@@ -753,8 +804,14 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
         .submenu-dessert{
             @include tablette-only(){
                 width: 30%;
-                // height: 5em;
-                margin: 1% 1% 5% auto;
+                margin: 0 auto;
+            }
+
+            .submenu-detail{
+                @include tablette-only(){
+                    width: 65%;
+                }
+                
             }
         }
         
@@ -762,24 +819,9 @@ $gradient: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 7
 
 }
 
-
-//animation check rotate
-@keyframes check{
-    0%{
-        transform: translateX(-9999);
-        visibility: hidden;
-    }
-    100%{
-        transform: translateX(0);
-        visibility: visible;
-    }
-}
-
-@keyframes color{
-    0%{
-        opacity: 0.5;
-    }
-    100%{
-        opacity: 1;
-    }
+// animation menu transparence
+@keyframes menu{
+    0%{ opacity: 0; transform: translateY(20px);}
+    50%{ opacity: 0.5;}
+    100%{ opacity: 1; transform: translateY(0);}
 }
