@@ -1,0 +1,313 @@
+// Header Page d'acceuil
+.home-header{
+
+    text-align: center;
+    padding-top: 1em;
+
+    &>.home-heading-logo{
+            box-shadow: 0px 5px 5px #DDDDDD;
+        
+        &>.home-logo{
+            margin-bottom: 1em;
+            width: 45%;
+            margin-bottom: 0.5em;
+
+            @include tablette-only(){
+                width: 25%;
+            }
+
+            @include laptop-only(){
+                width: 25%;
+            }
+        }
+    }
+
+    &>.localisation-box{
+        text-align: center;
+        background-color: #EAEAEA;
+        padding: 1em 0em;
+        position: relative;
+        z-index: -5;
+
+      &>.fa-map-marker-alt{ 
+            font-size: 1em;
+            margin-left: 3em;
+        }  
+
+
+      &>.search-box{
+          border-style: none;
+          font-family: Roboto, sans-serif;
+          background-color: #EAEAEA;
+          margin-left: 0.5em;
+
+            font-size: 1em;
+            font-family: Roboto, sans-serif;
+            margin-left: 0.5em;
+      }
+    }
+}
+
+// Grand titre 
+.home-title{
+    padding: 2em 2em;
+    text-align: center;
+    background-color: $color-background;
+    font-size: 1.2em;
+    &>h2{
+        font-size: 0.7em;
+        font-weight: 200;
+        letter-spacing: 0.1em;
+    }
+}
+
+// Fonctionnement
+.fonctionnement{
+    padding: 2em 1em 3em 1em;
+    display: block;
+
+    h2{
+        margin-bottom: 1.5em;
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
+    }
+
+    .fonctionnement-procedure-boxes{
+
+        @include tablette-only(){
+            display: inline-flex;
+            margin: auto 10% auto 10%;
+            flex-wrap: wrap;
+        }
+
+        @include laptop-only(){
+            display: flex;
+        }
+
+        &>.procedure-boxes{
+            background-color: $color-background;
+            border-radius: 15px;
+            padding: 0.5em;
+            display: flex;
+            margin: 2em auto;
+            width: 16em;
+            @include card-shadow();
+
+            @include mobile-only(){
+                width: 18em;
+            }
+
+            @include tablette-only(){
+                display: inline-flex;
+                width: 18em;
+                flex-wrap: wrap;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $color-primary-transparency;
+                .procedure-icons{
+                    color: #9356DC;
+                }
+            }
+
+            &>.procedure-numbers{
+                position: absolute;
+                border-radius: 100px;
+                background-color: $color-primary;
+                margin-top: 0.5em;
+                margin-left: -1.5em;
+
+                &>p{
+                    height: 0em;
+                    width: 1.9em;
+                    text-align: center;
+                    position: relative;
+                    top: -0.5em;
+                    color: #fff;
+                }
+        }
+
+        &>.procedure-icons{
+            margin: 1em 1em 0em 1.5em;
+            color: #7D7C7D;
+
+            .fa-mobile-alt{
+                margin-right: 0.3em;
+            }
+        }
+
+        &>.procedure-text{
+            font-weight: 500;
+        }
+    }
+    }
+}
+
+// Restaurants
+#restaurant{
+    display: block;
+    padding: 2em 1em;
+    background-color: $color-background;
+    
+    h2{
+        margin-bottom: 1.5em;
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
+    }
+
+    &>.restaurant-box{
+        @include tablette-only(){
+            text-align: center;
+        }
+
+        @include laptop-only(){
+            text-align: center;
+        }
+
+        &>.restaurant-choice{
+        margin: 1em auto 2em auto;
+        display: block;
+        width: 21em;
+        height: 16em;
+        border-radius: 20px;
+        @include card-shadow();
+
+        @include tablette-only(){
+            display: inline-block;
+            margin: 2%;
+        }
+
+        @include laptop-only(){
+            display: inline-block;
+            margin: 1% 6%;
+        }
+        
+            &>.img-home-restaurant{
+                object-fit: cover;
+                object-position: 50% 60%;
+                width: 100%;
+                height: 11em;
+                border-radius: 20px 20px 0px 0px;
+            }
+
+            .restaurant-heading{
+                margin: 1em 0.5em 0em 1em;
+                font-weight: 700;
+
+                @include tablette-only(){
+                    text-align: left;
+                }
+
+                @include laptop-only(){
+                    text-align: left;
+                }
+                
+            }
+
+            .restaurant-subheading{
+                margin: 0.3em 0.5em 0.5em 1em;
+                font-weight: 300;
+                
+                @include tablette-only(){
+                    text-align: left;
+                }
+
+                @include laptop-only(){
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    
+
+    .img-home-restaurant{
+        cursor: pointer;
+    }
+
+    .menu-link{
+        text-decoration: none;
+        color: #000;
+    }
+
+    .new-restaurant-box{
+        position: relative;
+        background-color: $color-tertiary;
+        padding: 0.1em 0.5em;
+        font-size: 1em;
+        border-radius: 3px;
+        width: 5em;
+        height: 2em;
+        margin: -14em 0em 0em 14.5em;
+        text-align: center;
+
+        p{
+            margin: 0.5em;
+            font-size: 1em;
+            color: #038C65;
+        }
+    }
+
+    .heart{
+        position: relative;
+        margin: -2.5em 0em 0em 18em;
+        cursor: pointer;
+
+        &.heart-box{
+            margin: 9em 0em 0em 18em;
+        }
+
+        .fa-heart{
+            font-size: 1.5em;
+            cursor: pointer;
+        
+            &:hover{
+                visibility: hidden;
+            }
+
+            .fas {
+                font-size: 1em;
+                cursor: pointer;
+                position: absolute;
+                left: 0em;
+                color: transparent;
+
+                @include laptop-only(){
+                    left: 0.5em;
+                }
+
+                @include tablette-only(){
+                    left: 0.5em;
+                }
+
+                &:hover{
+                    background: -moz-linear-gradient(top, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%); 
+                    background: -webkit-linear-gradient(top, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%); 
+                    background: linear-gradient(to bottom, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text; 
+                    -webkit-text-fill-color:transparent;
+                    animation: color 2s;
+                    visibility: visible;
+                }
+            }
+        }
+
+        
+    }
+
+}

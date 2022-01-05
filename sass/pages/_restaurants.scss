@@ -1,0 +1,370 @@
+// Page restaurant
+
+// Header
+.restaurant-header{
+    display: flex;
+
+    i{
+        width: 20%;
+        font-size: 1.5em;
+        padding: 1em 0em 1em 1em;
+        text-decoration: none;
+        color: #000;
+
+        @include laptop-only(){
+            padding-top: 1.2em;
+        }
+    }
+
+    .restaurant-heading-logo{
+        margin: auto 15%;
+        text-align: center;
+        width: 25%;
+        
+
+        @include tablette-only(){
+            width: 25%;
+            margin: auto 33%;
+        }
+
+        @include laptop-only(){
+            margin: auto 33%;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+            width: 25%;
+        }
+    }
+}
+
+// Photo background
+.heading-restaurant-img{
+    width: 100%;
+
+    &.note-enchantee{
+        height: 15em;
+        object-fit: cover;
+        object-position: 50% 81%;
+        @include tablette-only(){
+            height: 20em;
+            object-position: 50% 75%;
+        }
+        @include laptop-only(){
+            height: 30em;
+            object-fit: cover;
+            object-position: 50% 62%;
+        }
+    }
+
+    @include tablette-only(){
+        height: 24em;
+        object-fit: cover;
+        object-position: 50% 62%;
+    }
+
+    @include laptop-only(){
+        height: 30em;
+        object-fit: cover;
+        object-position: 50% 62%;
+    }
+}
+
+// animation menu transparence
+@keyframes menu{
+    0%{ opacity: 0; transform: translateY(20px);}
+    50%{ opacity: 0.5;}
+    100%{ opacity: 1; transform: translateY(0);}
+}
+
+//mixin animation de la coche
+@mixin check-transition-timing($type){
+    transition: $type 300ms 100ms ease-out;
+}
+
+// Section Menu
+.restaurant-menu{
+    background-color: $color-background;
+    border-radius: 40px 40px 0px 0px;
+    position: relative;
+    padding: 1em 1em;
+    margin: -4em auto 0 auto;
+
+    .heading-restaurant-menu{
+        display: flex;
+        justify-content: space-between;
+
+        h2{
+            font-family: 'Shrikhand';
+            font-size: 2em;
+            font-weight: 100;
+            margin-left: 0.5em;
+
+            @include tablette-only(){
+                margin-left: 1.5em;
+            }
+
+            @include laptop-only(){
+                margin-left: 2em;
+                font-size: 3em;
+            }
+
+            &.delice{
+                @include mobile-only{
+                    font-size: 1.8em;
+                    margin-top: 1em;
+                }
+            }
+
+            &.palette{
+                @include mobile-only(){
+                    font-size: 1.7em;
+                    margin-top: 1.1em;
+                }
+            }
+
+            &.note{
+                @include mobile-only(){
+                    font-size: 1.7em;
+                    margin-top: 1.1em;
+                }
+            }
+
+        }
+
+        .heart{
+            position: relative;
+            margin-top: 2em;
+            margin-right: 1em;
+
+            @include tablette-only(){
+                margin-right: 4em;
+            }
+            @include laptop-only(){
+                margin-right: 7em;
+                margin-top: 4em;
+            }
+
+            .fa-heart{
+                font-size: 2em;
+                cursor: pointer;
+            
+                &:hover{
+                    visibility: hidden;
+                }
+
+                .fas {
+                    font-size: 1em;
+                    cursor: pointer;
+                    position: absolute;
+                    left: 0em;
+                    color: transparent;
+
+                    &:hover{
+                        background: -moz-linear-gradient(top, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%); 
+                        background: -webkit-linear-gradient(top, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%); 
+                        background: linear-gradient(to bottom, rgba(147,86,220,1) 0%,rgba(255,121,218,1) 100%);
+                        -webkit-background-clip: text;
+                        -moz-background-clip: text;
+                        background-clip: text; 
+                        -webkit-text-fill-color:transparent;
+                        animation: color 2s;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .responsive-menu-laptop{
+        @include laptop-only(){
+            display: flex;
+            margin-left: 2em;
+            width: 95%;
+        }
+    }
+
+    .responsive-menu{
+        @include tablette-only(){
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include laptop-only(){
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    .menu{
+        margin-bottom: 2em;
+        @include tablette-only(){
+            width: 50%;
+        }
+
+        @include laptop-only(){
+            width: 50%;
+        }
+
+        h3{
+            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 1.1em;
+            padding-bottom: 0.3em;
+            border-bottom: solid $color-tertiary 0.2em;
+            width: 15%;
+            margin-left: 1em;
+            
+            @include tablette-only(){
+                margin-left: 3em;
+            }
+        }
+
+        .submenu{
+            display: flex;
+            justify-content: space-between;
+            background-color: #FFFFFF;
+            margin: 1em auto;
+            border-radius: 1rem;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 100%;
+            height: 5em;
+            opacity: 0;
+
+            @include card-shadow();
+
+            @include tablette-only(){
+                width: 80%;
+            }
+
+            @include laptop-only(){
+                width: 90%;
+            }
+             
+            @for $i from 1 through (5) {  
+                &:nth-child(#{$i}){
+                    animation: menu 1s 800ms*$i forwards;
+                }
+            }
+
+            &_detail{
+                width: 75%;
+                margin: 0.5em 0em 0.5em 1em;
+                transform: scaleX(1);
+                transform-origin: left;
+                justify-content: space-between;
+            
+                @include check-transition-timing(width);
+                
+                .submenu_title{
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    margin-bottom: 5px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                p{
+                    font-size: 0.95em;
+                    font-weight: 200;
+                    margin-top: 0.5em;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }   
+                
+            }
+
+            &:hover .submenu_title{
+                cursor: pointer;
+                width: 70%;
+                @include check-transition-timing(width);
+            }&:hover p{
+                cursor: pointer;
+                width: 70%;
+                @include check-transition-timing(width);
+            }
+
+            &_prix{
+                align-self: flex-end;
+                font-weight: 700;
+                position: absolute;
+                right: 1em;
+                bottom: 1em;
+                transform-origin: right;
+                @include check-transition-timing(transform);
+            }   
+
+            .check-rotate-animation{
+                display: flex;
+                background-color: $color-tertiary;
+                width: $check-transition-width;
+                transform-origin: right;
+                transform: scaleX(0);
+                @include check-transition-timing(transform);
+                
+                .rotate-icon-animation{
+                    color: #FFFFFF;
+                    font-size: 1.6rem;
+                    margin: auto;
+                    transform: rotate(0deg);
+                    @include check-transition-timing(transform);
+                }
+            }
+            
+            &:hover{
+                cursor: pointer;
+            }
+            &:hover .check-rotate-animation{
+                transform: scaleX(1);
+            }
+            &:hover .rotate-icon-animation{
+                transform: rotate(-360deg);
+            }
+            &:hover .submenu_prix{
+                transform: translateX(-$check-transition-width);
+            }
+        }
+        
+    }
+
+    .menu-dessert{
+        @include tablette-only(){
+            display: flex;
+            flex-direction: column;
+            margin: auto auto;
+            width: 90%;
+        }
+
+        @include laptop-only(){
+            width: 50%;
+        }
+        h3{
+            @include tablette-only(){
+                margin: auto 66% 1.5% 28%;
+                width: 10%;
+            }
+        }
+
+        .submenu-dessert{
+            @include tablette-only(){
+                width: 45%;
+                margin: 0.5em auto;
+            }
+
+            .submenu-detail{
+                @include tablette-only(){
+                    width: 65%;
+                }
+                
+            }
+        }
+        
+    }
+
+}
+

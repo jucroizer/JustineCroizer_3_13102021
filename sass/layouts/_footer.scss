@@ -1,0 +1,59 @@
+// Footer
+.footer{
+    display: block;
+    padding: 1em 4em;
+    background-color: $color-footer;
+    color: #fff;
+
+    h3{
+        margin: 1.5em 11.5em 1.5em -2em;
+        font-family: 'Shrikhand';
+
+        @include laptop-only(){
+            margin-left: 2em;
+        }
+
+        @include tablette-only(){
+            margin-left: 2em;
+        }
+    }
+
+    .footer-menu{
+
+        ul{
+            display: block;
+
+            @include laptop-only(){
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .footer-list{
+            list-style-type: none;
+            margin: 1em 2em 1em -4.5em;
+
+            @include laptop-only(){
+                margin: -3em 2em 1em 1em;
+            }
+
+            @include tablette-only(){
+                margin-left: 0em;
+            }
+
+            &>.fa-utensils{
+                margin-right: 1em;
+            }
+
+            &>.fa-hands-helping{
+                margin-right: 1em;
+                font-size: 0.8em;
+            }
+            .contact{
+                text-decoration: none;
+                color: $color-background-menu;
+            }
+        }
+    }
+    
+}

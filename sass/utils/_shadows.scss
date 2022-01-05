@@ -1,0 +1,8 @@
+//mixin box-shadow
+@mixin card-shadow {
+    box-shadow: 4px 5px 10px #CECECD;
+}
+
+@mixin card-shadow-hover{
+    box-shadow: 5px 7px 12px #CECECD;
+}

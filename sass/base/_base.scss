@@ -1,0 +1,17 @@
+/* Mise en page générale */
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'Shrikhand';
+    src: url('font/Shrikhand/Shrikhand-Regular.ttf') format(truetype);
+}

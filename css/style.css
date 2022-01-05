@@ -68,6 +68,37 @@ html, body {
     z-index: -9999;
   }
 }
+.cta {
+  border: none;
+  border-radius: 50px;
+  margin: 1em;
+  padding: 1em 1.3em;
+  background: linear-gradient(346deg, #9356dc 28%, #ff79da 78%);
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 5px 10px #CECECD;
+}
+.cta:hover {
+  background: linear-gradient(346deg, rgba(147, 86, 220, 0.9) 28%, rgba(255, 121, 218, 0.9) 78%);
+  box-shadow: 5px 7px 12px #CECECD;
+}
+.cta.cta-restaurant {
+  margin: 5% 23% 10% 23%;
+  padding: 1em 2.5em;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) and (max-width: 1180px) {
+  .cta.cta-restaurant {
+    margin: 5% 40% 5% 40%;
+  }
+}
+@media screen and (min-width: 1181px) {
+  .cta.cta-restaurant {
+    margin: 1% 45% 6% 45%;
+  }
+}
+
 .home-header {
   text-align: center;
   padding-top: 1em;
@@ -121,37 +152,6 @@ html, body {
   font-size: 0.7em;
   font-weight: 200;
   letter-spacing: 0.1em;
-}
-
-.cta {
-  border: none;
-  border-radius: 50px;
-  margin: 1em;
-  padding: 1em 1.3em;
-  background: linear-gradient(346deg, #9356dc 28%, #ff79da 78%);
-  font-size: 1em;
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 4px 5px 10px #CECECD;
-}
-.cta:hover {
-  background: linear-gradient(346deg, rgba(147, 86, 220, 0.9) 28%, rgba(255, 121, 218, 0.9) 78%);
-  box-shadow: 5px 7px 12px #CECECD;
-}
-.cta.cta-restaurant {
-  margin: 5% 23% 10% 23%;
-  padding: 1em 2.5em;
-  font-weight: bold;
-}
-@media screen and (min-width: 768px) and (max-width: 1180px) {
-  .cta.cta-restaurant {
-    margin: 5% 40% 5% 40%;
-  }
-}
-@media screen and (min-width: 1181px) {
-  .cta.cta-restaurant {
-    margin: 1% 45% 6% 45%;
-  }
 }
 
 .fonctionnement {
@@ -458,12 +458,15 @@ html, body {
   }
 }
 .restaurant-header .restaurant-heading-logo {
-  width: 70%;
-  padding: 1.5em 1em 1em 4.5em;
+  margin: auto 25%;
+  text-align: center;
+  padding-left: 0;
+  padding-right: 0;
 }
 @media screen and (min-width: 768px) and (max-width: 1180px) {
   .restaurant-header .restaurant-heading-logo {
-    margin: auto 20% auto 24%;
+    width: 25%;
+    margin: auto 33%;
   }
 }
 @media screen and (min-width: 1181px) {
@@ -472,11 +475,8 @@ html, body {
     text-align: center;
     padding-left: 0;
     padding-right: 0;
-    width: 30%;
+    width: 25%;
   }
-}
-.restaurant-header .restaurant-heading-logo > .restaurant-logo {
-  width: 60%;
 }
 
 .heading-restaurant-img {
@@ -515,6 +515,19 @@ html, body {
   }
 }
 
+@keyframes menu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .restaurant-menu {
   background-color: #f6f6f6;
   border-radius: 40px 40px 0px 0px;
@@ -694,7 +707,7 @@ html, body {
   transform: scaleX(1);
   transform-origin: left;
   justify-content: space-between;
-  transition: width 300ms 100ms linear;
+  transition: width 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu_detail .submenu_title {
   font-weight: 600;
@@ -714,13 +727,13 @@ html, body {
 }
 .restaurant-menu .menu .submenu:hover .submenu_title {
   cursor: pointer;
-  width: 80%;
-  transition: width 300ms 100ms linear;
+  width: 70%;
+  transition: width 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu:hover p {
   cursor: pointer;
-  width: 80%;
-  transition: width 300ms 100ms linear;
+  width: 70%;
+  transition: width 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu_prix {
   align-self: flex-end;
@@ -729,7 +742,7 @@ html, body {
   right: 1em;
   bottom: 1em;
   transform-origin: right;
-  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu .check-rotate-animation {
   display: flex;
@@ -737,14 +750,14 @@ html, body {
   width: 70px;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu .check-rotate-animation .rotate-icon-animation {
   color: #FFFFFF;
   font-size: 1.6rem;
   margin: auto;
   transform: rotate(0deg);
-  transition: transform 300ms 100ms linear;
+  transition: transform 300ms 100ms ease-out;
 }
 .restaurant-menu .menu .submenu:hover {
   cursor: pointer;
@@ -786,20 +799,6 @@ html, body {
 @media screen and (min-width: 768px) and (max-width: 1180px) {
   .restaurant-menu .menu-dessert .submenu-dessert .submenu-detail {
     width: 65%;
-  }
-}
-
-@keyframes menu {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
