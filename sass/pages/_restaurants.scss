@@ -17,8 +17,7 @@
     }
 
     .restaurant-heading-logo{
-        margin: auto 15%;
-        text-align: center;
+        margin: 5% auto 5% 15%;
         width: 25%;
         
 
@@ -283,7 +282,9 @@
                 cursor: pointer;
                 width: 70%;
                 @include check-transition-timing(width);
-            }&:hover p{
+            }
+            
+            &:hover p{
                 cursor: pointer;
                 width: 70%;
                 @include check-transition-timing(width);

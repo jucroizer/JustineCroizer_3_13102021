@@ -5,7 +5,6 @@
     margin: 1em;
     padding: 1em 1.3em;
     background: $gradient;
-    // background: linear-gradient(346deg, rgba(147,86,220,1) 28%, rgba(255,121,218,1) 78%);
     font-size: 1em;
     color: #fff;
     cursor: pointer;
@@ -17,7 +16,7 @@
     }
 
     &.cta-restaurant{
-        margin: 5% 25% 10% 25%;
+        margin: 5% auto 10% 25%;
         padding: 1em 2.5em;
         font-weight: bold;
 
